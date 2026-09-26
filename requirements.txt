@@ -14,3 +14,4 @@ rank-bm25
 pypdf
 
 # Added in later phases: ragas (evaluation), fastapi + uvicorn (web app)
+beautifulsoup4
