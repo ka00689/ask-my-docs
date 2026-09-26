@@ -138,6 +138,8 @@ def main():
                         help="how much to subtract from a recital's rerank score")
     parser.add_argument("--no-siblings", action="store_true",
                         help="turn off adding the other parts of a split article")
+    parser.add_argument("--sweep-threshold", action="store_true",
+                        help="try several refusal thresholds and report the trade-off")
     parser.add_argument("--sweep", action="store_true",
                         help="try several demotion settings and report which is best")
     args = parser.parse_args()
@@ -152,6 +154,30 @@ def main():
 
     retriever = Retriever(exclude_kinds={"recital"} if args.exclude_recitals else (), **kwargs)
     questions = load_questions(retriever)
+
+    if args.sweep_threshold:
+        import retrieval as R
+        answerable = [q for q in questions if q["gold_chunk_ids"]]
+        unanswerable = [q for q in questions if not q["gold_chunk_ids"]]
+        print(f"\nRefusal threshold trade-off, {len(questions)} questions, k={args.k}.")
+        print("answered = share of answerable questions the system would attempt.")
+        print("refused  = share of out-of-scope questions it correctly declines.\n")
+        header = f"{'threshold':>10} {'answered':>9} {'refused':>9}"
+        print(header); print("-" * len(header))
+
+        scored = []      # best rerank score per question, computed once
+        for q in questions:
+            results = retriever.search(q["question"], n=args.k, mode="hybrid", rerank=True)
+            best = results[0]["rerank_score"] if results else -99
+            scored.append((q, best))
+
+        for threshold in (0.0, -1.0, -2.0, -3.0, -4.0, -5.0, -6.0):
+            attempted = sum(1 for q, b in scored if q["gold_chunk_ids"] and b >= threshold)
+            declined = sum(1 for q, b in scored if not q["gold_chunk_ids"] and b < threshold)
+            print(f"{threshold:>10.1f} {attempted / max(len(answerable), 1):>8.0%} "
+                  f"{declined / max(len(unanswerable), 1):>8.0%}")
+        print("\nPick the loosest threshold that still refuses every out-of-scope question.")
+        return
 
     if args.sweep:
         print(f"\nTuning recital demotion on {len(questions)} questions, k={args.k}.")

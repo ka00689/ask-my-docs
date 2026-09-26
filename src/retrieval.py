@@ -40,8 +40,15 @@ RRF_K = 60
 # How many merged candidates the reranker reads before choosing the best few.
 RERANK_CANDIDATES = 20
 # The reranker scores each passage; below this, a passage is probably not an
-# answer at all. Used later to let the system say "I don't know".
-RERANK_MIN_SCORE = 0.0
+# answer at all, and the system says "I don't know" instead of guessing.
+#
+# This was 0.0, which refused too much. The cross-encoder was trained on short
+# search queries, so a conversational question ("I run a small company using AI
+# to screen job applicants - what do I need to do?") scores low against every
+# passage even when the right article is ranked first. Genuinely out-of-scope
+# questions score far lower still, around -8, which leaves room for a looser
+# cutoff. Tune it with: python eval/evaluate.py --sweep-threshold
+RERANK_MIN_SCORE = -3.0
 
 # Recitals are the explanatory preamble of an EU regulation. They read like
 # answers, so they crowd out the articles that actually contain the law. Rather
