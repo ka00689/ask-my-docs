@@ -124,6 +124,12 @@ def main():
     parser.add_argument("--show-failures", action="store_true",
                         help="list the questions where nothing correct was found")
     parser.add_argument("--save", action="store_true", help="write results to eval/results/")
+    parser.add_argument("--min-hit-rate", type=float, default=None,
+                        help="fail (exit 1) if hit rate falls below this, e.g. 0.80")
+    parser.add_argument("--min-mrr", type=float, default=None,
+                        help="fail (exit 1) if MRR falls below this, e.g. 0.65")
+    parser.add_argument("--min-refusal-rate", type=float, default=None,
+                        help="fail (exit 1) if correct refusals fall below this")
     parser.add_argument("--exclude-recitals", action="store_true",
                         help="experiment: ignore recitals, keeping only articles and annexes")
     parser.add_argument("--recital-weight", type=float, default=None,
@@ -197,11 +203,35 @@ def main():
                 print(f"      wanted:    {q['gold'] or 'a refusal'}")
                 print(f"      retrieved: {q.get('retrieved', [])[:3]}")
 
+    # The gate: turn the measurement into a pass or fail, so CI can block a
+    # change that makes retrieval worse.
+    thresholds = [("hit rate", best["hit_rate"], args.min_hit_rate),
+                  ("MRR", best["mrr"], args.min_mrr),
+                  ("refusal rate", best["refusal_rate"], args.min_refusal_rate)]
+    checked = [(name, got, want) for name, got, want in thresholds if want is not None]
+    if checked:
+        print("\nTHRESHOLDS")
+        print("-" * 40)
+        failures = []
+        for name, got, want in checked:
+            got = -1.0 if got is None else got
+            ok = got >= want
+            print(f"   {name:14} {got:.2f}  needs >= {want:.2f}   {'PASS' if ok else 'FAIL'}")
+            if not ok:
+                failures.append(f"{name} {got:.2f} < {want:.2f}")
+
     if args.save:
         RESULTS_DIR.mkdir(parents=True, exist_ok=True)
         out = RESULTS_DIR / f"{date.today().isoformat()}_k{args.k}.json"
         out.write_text(json.dumps(results, indent=2), encoding="utf-8")
         print(f"\nSaved to {out.relative_to(PROJECT)}")
+
+    if checked and failures:
+        print("\nGATE FAILED: " + "; ".join(failures))
+        print("This change makes retrieval worse. Fix it or justify moving the threshold.")
+        sys.exit(1)
+    if checked:
+        print("\nGATE PASSED.")
 
 
 if __name__ == "__main__":
