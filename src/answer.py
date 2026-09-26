@@ -30,7 +30,12 @@ from retrieval import RERANK_MIN_SCORE, Retriever
 from langchain_ollama import ChatOllama
 
 MODEL = "llama3.2"
+# How many passages the model is shown. Tried 8; measured worse, because the
+# extra low-scoring passages gave the model more ways to go wrong. Kept at 5.
 PASSAGES_SHOWN = 5
+# Small models often get the citation rules right on a later try, so give them
+# a few goes before refusing. Each attempt names the specific problem found.
+MAX_ATTEMPTS = 4
 
 # Ollama can force the reply to match this shape while it generates, so a claim
 # with no citation becomes impossible rather than something we catch afterwards.
@@ -63,11 +68,22 @@ SYSTEM_PROMPT = """You answer questions about EU law using ONLY the numbered pas
 
 Rules:
 - Use only what the passages say. Never add knowledge from memory.
+- Be brief. Answer in at most three short claims, in your own words.
+  Summarise; do not copy long stretches of the passage.
+- Answer the question that was asked. If a passage lists several dates,
+  categories or cases, give only the one the question is about, and say which
+  one it is. Never give a date for a different category.
 - Every claim must cite the passage markers it comes from, written exactly as shown: S1, S2, S3.
 - Cite the marker at the top of a passage, NEVER an article or recital number from inside the text.
   A passage headed [S2] about "Recital 40" is cited as "S2", not "40".
 - If the passages do not answer the question, say so with "answerable": false.
 - When passages disagree, prefer the one with the later version_date and say that it amends the earlier one.
+- Regulation (EU) 2024/1689 was amended in 2026 by Regulation (EU) 2026/1744,
+  which changed several dates of application. If the question is about dates,
+  deadlines or when obligations start, and no passage from the 2026 amendment
+  is among those provided, add a final claim warning that the dates shown are
+  from the original 2024 text and may have been changed by the 2026 amendment,
+  citing the passage the dates came from.
 
 Reply with JSON only, in exactly this shape:
 {"answerable": true, "claims": [{"text": "A sentence of the answer.", "citations": ["S1", "S3"]}]}
@@ -112,9 +128,26 @@ def parse_reply(raw):
     return json.loads(text)
 
 
+MONTHS = {"january": "01", "february": "02", "march": "03", "april": "04",
+          "may": "05", "june": "06", "july": "07", "august": "08",
+          "september": "09", "october": "10", "november": "11", "december": "12"}
+
+
+def normalise_dates(text):
+    """Write dates one way, so "12 July 2024" and "July 12, 2024" compare equal."""
+    text = re.sub(r"\b(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\b",
+                  lambda m: f"{m.group(3)}-{MONTHS.get(m.group(2).lower(), m.group(2))}-{int(m.group(1)):02d}",
+                  text)
+    text = re.sub(r"\b([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})\b",
+                  lambda m: f"{m.group(3)}-{MONTHS.get(m.group(1).lower(), m.group(1))}-{int(m.group(2)):02d}",
+                  text)
+    return text
+
+
 # Dates and figures are what a model is most likely to invent, so they get checked.
 FACT_PATTERN = re.compile(
     r"\b(?:\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}"
+    r"|(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}"
     r"|\d{4}/\d{1,4}|\d+(?:\.\d+)?\s*%|EUR\s?[\d\s,.]+\d)\b"
 )
 
@@ -156,9 +189,13 @@ def validate(reply, passages):
             continue
 
         # Every date or figure in the claim must appear in a cited passage.
+        # Only the passage's own text counts: the "Source: ... version_date: ..."
+        # header we add around it is our furniture, not the law, and a model
+        # quoting a date from there would otherwise pass this check.
         cited_text = " ".join(passages[int(str(c)[1:]) - 1]["chunk"]["text"] for c in citations)
+        cited_text = normalise_dates(cited_text)
         for fact in FACT_PATTERN.findall(text):
-            if fact.replace("  ", " ") not in cited_text:
+            if normalise_dates(fact) not in cited_text:
                 problems.append(
                     f"Claim {i} states '{fact}' but that does not appear in the cited passage(s)."
                 )
@@ -170,7 +207,10 @@ def ask_model(llm, question, passages, complaint=None):
     prompt = build_prompt(question, passages)
     if complaint:
         prompt += ("\n\nYour previous reply was rejected for these reasons:\n"
-                   f"{complaint}\nWrite it again, correctly.")
+                   f"{complaint}\n"
+                   "Write it again. Copy every date, figure and regulation number "
+                   "exactly as it appears in the passage you cite, and if a fact "
+                   "is not in the passages, leave it out.")
     reply = llm.invoke([("system", SYSTEM_PROMPT), ("human", prompt)])
     return reply.content
 
@@ -233,7 +273,7 @@ def main():
         llm = ChatOllama(model=args.model, temperature=0, format="json")
 
     complaint = None
-    for attempt in (1, 2):
+    for attempt in range(1, MAX_ATTEMPTS + 1):
         raw = ask_model(llm, args.question, passages, complaint)
         if args.debug:
             print(f"\n--- raw reply, attempt {attempt} ---\n{raw}\n--- end ---")

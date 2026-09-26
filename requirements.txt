@@ -2,7 +2,6 @@
 langchain
 langchain-community
 langchain-chroma
-langchain-huggingface
 langchain-ollama
 
 # Retrieval: vector database, embeddings + reranker, keyword search
@@ -11,7 +10,9 @@ sentence-transformers
 rank-bm25
 
 # Reading documents
+beautifulsoup4
 pypdf
 
-# Added in later phases: ragas (evaluation), fastapi + uvicorn (web app)
-beautifulsoup4
+# Web backend
+fastapi
+uvicorn
