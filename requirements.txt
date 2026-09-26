@@ -1,0 +1,16 @@
+# Orchestration (the glue between all the pieces)
+langchain
+langchain-community
+langchain-chroma
+langchain-huggingface
+langchain-ollama
+
+# Retrieval: vector database, embeddings + reranker, keyword search
+chromadb
+sentence-transformers
+rank-bm25
+
+# Reading documents
+pypdf
+
+# Added in later phases: ragas (evaluation), fastapi + uvicorn (web app)

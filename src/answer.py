@@ -1,0 +1,262 @@
+"""Answer a question from the retrieved passages, with citations your code checks.
+
+Run it from the project folder with the virtual environment active:
+    python src/answer.py "From what date do high-risk obligations apply?"
+    python src/answer.py "What is the capital of France?"     # should refuse
+
+How the enforcement works:
+  1. Retrieve the best passages and number them [1]...[5].
+  2. Ask the local model for a JSON answer where every claim lists the passage
+     numbers that support it.
+  3. Check the reply in code: valid JSON, every claim cited, every citation a
+     real passage number, and every date or figure in a claim actually present
+     in the passages it cites.
+  4. If a check fails, ask once more with the specific problem named. If it
+     fails again, refuse rather than show an unverified answer.
+"""
+import argparse
+import json
+import os
+import re
+import sys
+from pathlib import Path
+
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")
+os.environ.setdefault("HF_HUB_DISABLE_TELEMETRY", "1")
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from retrieval import RERANK_MIN_SCORE, Retriever
+
+from langchain_ollama import ChatOllama
+
+MODEL = "llama3.2"
+PASSAGES_SHOWN = 5
+
+# Ollama can force the reply to match this shape while it generates, so a claim
+# with no citation becomes impossible rather than something we catch afterwards.
+# "minItems": 1 is what stops the empty citation lists you were getting.
+ANSWER_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "answerable": {"type": "boolean"},
+        "reason": {"type": "string"},
+        "claims": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "text": {"type": "string"},
+                    "citations": {
+                        "type": "array",
+                        "items": {"type": "string", "pattern": "^S[0-9]+$"},
+                        "minItems": 1,
+                    },
+                },
+                "required": ["text", "citations"],
+            },
+        },
+    },
+    "required": ["answerable", "claims"],
+}
+
+SYSTEM_PROMPT = """You answer questions about EU law using ONLY the numbered passages provided.
+
+Rules:
+- Use only what the passages say. Never add knowledge from memory.
+- Every claim must cite the passage markers it comes from, written exactly as shown: S1, S2, S3.
+- Cite the marker at the top of a passage, NEVER an article or recital number from inside the text.
+  A passage headed [S2] about "Recital 40" is cited as "S2", not "40".
+- If the passages do not answer the question, say so with "answerable": false.
+- When passages disagree, prefer the one with the later version_date and say that it amends the earlier one.
+
+Reply with JSON only, in exactly this shape:
+{"answerable": true, "claims": [{"text": "A sentence of the answer.", "citations": ["S1", "S3"]}]}
+or
+{"answerable": false, "reason": "Why the passages do not answer it.", "claims": []}
+
+"citations" must never be empty. Every claim needs at least one passage number.
+
+Worked example. Given passages:
+[S1] Article 99 - Penalties
+Source: Example Regulation (version_date: 2024-07-12, binding_law)
+Article 99 Penalties 1. Non-compliance with the prohibitions shall be subject to
+administrative fines of up to EUR 35 000 000.
+[S2] Recital 5
+Source: Example Regulation (version_date: 2024-07-12, binding_law)
+(5) Penalties should be effective, proportionate and dissuasive.
+
+Question: What is the maximum fine for prohibited practices?
+
+Correct reply:
+{"answerable": true, "claims": [{"text": "Prohibited practices can be fined up to EUR 35 000 000.", "citations": ["S1"]}, {"text": "Penalties are required to be effective, proportionate and dissuasive.", "citations": ["S2"]}]}
+
+Note how "Recital 5" is cited as "S2", the marker, not as 5."""
+
+
+def build_prompt(question, passages):
+    """Lay out the numbered passages followed by the question."""
+    blocks = []
+    for i, entry in enumerate(passages, start=1):
+        c = entry["chunk"]
+        blocks.append(
+            f"[S{i}] {c['label']}\n"
+            f"Source: {c['doc_title']} (version_date: {c['version_date']}, {c['authority']})\n"
+            f"{c['text']}"
+        )
+    return f"PASSAGES:\n\n" + "\n\n".join(blocks) + f"\n\nQUESTION: {question}"
+
+
+def parse_reply(raw):
+    """Turn the model's text into a dict, tolerating code fences."""
+    text = re.sub(r"^```(?:json)?|```$", "", raw.strip(), flags=re.MULTILINE).strip()
+    return json.loads(text)
+
+
+# Dates and figures are what a model is most likely to invent, so they get checked.
+FACT_PATTERN = re.compile(
+    r"\b(?:\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}"
+    r"|\d{4}/\d{1,4}|\d+(?:\.\d+)?\s*%|EUR\s?[\d\s,.]+\d)\b"
+)
+
+
+def validate(reply, passages):
+    """Return a list of problems. An empty list means the answer passed."""
+    problems = []
+
+    if not isinstance(reply, dict) or "answerable" not in reply:
+        return ["Reply is not in the required shape."]
+
+    if reply.get("answerable") is False:
+        return []      # a refusal needs no citations
+
+    claims = reply.get("claims") or []
+    if not claims:
+        return ["Said the question was answerable but gave no claims."]
+
+    valid_markers = {f"S{i}" for i in range(1, len(passages) + 1)}
+
+    for i, claim in enumerate(claims, start=1):
+        text = (claim.get("text") or "").strip()
+        citations = claim.get("citations") or []
+
+        if not text:
+            problems.append(f"Claim {i} has no text.")
+            continue
+        if not citations:
+            problems.append(f"Claim {i} has no citation: {text[:60]}")
+            continue
+
+        bad = [c for c in citations if str(c) not in valid_markers]
+        if bad:
+            problems.append(
+                f"Claim {i} cites {bad}, which is not a passage marker. "
+                f"Use only {sorted(valid_markers)} - the marker at the top of a passage, "
+                f"not an article or recital number from inside it."
+            )
+            continue
+
+        # Every date or figure in the claim must appear in a cited passage.
+        cited_text = " ".join(passages[int(str(c)[1:]) - 1]["chunk"]["text"] for c in citations)
+        for fact in FACT_PATTERN.findall(text):
+            if fact.replace("  ", " ") not in cited_text:
+                problems.append(
+                    f"Claim {i} states '{fact}' but that does not appear in the cited passage(s)."
+                )
+
+    return problems
+
+
+def ask_model(llm, question, passages, complaint=None):
+    prompt = build_prompt(question, passages)
+    if complaint:
+        prompt += ("\n\nYour previous reply was rejected for these reasons:\n"
+                   f"{complaint}\nWrite it again, correctly.")
+    reply = llm.invoke([("system", SYSTEM_PROMPT), ("human", prompt)])
+    return reply.content
+
+
+def print_answer(reply, passages):
+    if reply.get("answerable") is False:
+        print("\nNo answer given.")
+        print(f"Reason: {reply.get('reason', 'the passages do not cover this question')}")
+        return
+
+    print("\nANSWER")
+    print("=" * 70)
+    for claim in reply["claims"]:
+        marks = "".join(f"[{c}]" for c in claim["citations"])
+        print(f"{claim['text']} {marks}")
+
+    used = sorted({str(c) for claim in reply["claims"] for c in claim["citations"]},
+                  key=lambda m: int(m[1:]))
+    print("\nSOURCES")
+    print("=" * 70)
+    for marker in used:
+        chunk = passages[int(marker[1:]) - 1]["chunk"]
+        print(f"[{marker}] {chunk['label']} - {chunk['doc_title']} ({chunk['version_date']})")
+        print(f"    {chunk['source_url']}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Answer a question with checked citations.")
+    parser.add_argument("question")
+    parser.add_argument("--show-passages", action="store_true",
+                        help="also print the passages the model was given")
+    parser.add_argument("--debug", action="store_true",
+                        help="print the model's raw reply, before any checking")
+    parser.add_argument("--model", default=MODEL,
+                        help="which Ollama model to use, e.g. qwen2.5:7b")
+    args = parser.parse_args()
+
+    retriever = Retriever()
+    passages = retriever.search(args.question, n=PASSAGES_SHOWN, rerank=True)
+
+    # If even the best passage scores poorly, the documents probably do not cover this.
+    if not passages or passages[0]["rerank_score"] < RERANK_MIN_SCORE:
+        best = f"{passages[0]['rerank_score']:.2f}" if passages else "none"
+        print(f"\nNo answer given. Nothing relevant found (best score: {best}).")
+        print("These documents cover the EU AI Act and its 2026 amendment.")
+        return
+
+    if args.show_passages:
+        print("\nPASSAGES GIVEN TO THE MODEL")
+        print("=" * 70)
+        for i, entry in enumerate(passages, start=1):
+            print(f"[S{i}] {entry['chunk']['label']}  (score {entry['rerank_score']:.2f})")
+
+    # Prefer schema-constrained output; fall back to plain JSON mode on older setups.
+    try:
+        llm = ChatOllama(model=args.model, temperature=0, format=ANSWER_SCHEMA)
+        llm.invoke([("human", "Reply with {\"answerable\": false, \"claims\": []}")])
+    except Exception:
+        print("(schema mode unavailable, falling back to plain JSON mode)")
+        llm = ChatOllama(model=args.model, temperature=0, format="json")
+
+    complaint = None
+    for attempt in (1, 2):
+        raw = ask_model(llm, args.question, passages, complaint)
+        if args.debug:
+            print(f"\n--- raw reply, attempt {attempt} ---\n{raw}\n--- end ---")
+        try:
+            reply = parse_reply(raw)
+        except json.JSONDecodeError:
+            complaint = "The reply was not valid JSON."
+            print(f"(attempt {attempt}: reply was not valid JSON, retrying)")
+            continue
+
+        problems = validate(reply, passages)
+        if not problems:
+            print_answer(reply, passages)
+            return
+
+        complaint = "\n".join(f"- {p}" for p in problems)
+        print(f"(attempt {attempt} rejected:)")
+        for p in problems:
+            print(f"   - {p}")
+
+    print("\nNo answer given. The model could not produce a properly cited answer.")
+    print("Refusing is the right outcome here: an unverified answer is worse than none.")
+
+
+if __name__ == "__main__":
+    main()

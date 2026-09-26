@@ -1,0 +1,4626 @@
+[
+  {
+    "mode": "vector",
+    "k": 5,
+    "questions": 55,
+    "hit_rate": 0.6730769230769231,
+    "recall": 0.6025641025641026,
+    "mrr": 0.5108974358974359,
+    "refusal_rate": 1.0,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is the definition of an AI system under the AI Act?",
+        "tags": [
+          "definition",
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:rct_12",
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:art_3_p5",
+          "ai_act_2024_1689:rct_53_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_3_p1"
+        ]
+      },
+      {
+        "id": "q02",
+        "question": "Which AI practices are prohibited?",
+        "tags": [
+          "simple",
+          "prohibited"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_7",
+          "ai_act_2024_1689:art_6_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_5_p2"
+        ]
+      },
+      {
+        "id": "q03",
+        "question": "When is an AI system classified as high-risk?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:rct_51",
+          "ai_act_2024_1689:art_6_p2",
+          "ai_act_2024_1689:art_6_p1",
+          "ai_act_2024_1689:art_9_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q04",
+        "question": "Is CV screening software for recruitment high-risk?",
+        "tags": [
+          "scenario",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_42",
+          "ai_act_2024_1689:rct_57",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_26_p2",
+          "ai_act_2024_1689:art_60_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_III_p1",
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q05",
+        "question": "What does the AI Act require for human oversight of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_14",
+          "ai_act_2024_1689:rct_85",
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:rct_26"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_14"
+        ]
+      },
+      {
+        "id": "q06",
+        "question": "What are the data governance requirements for training data?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_10_p1",
+          "ai_act_2024_1689:art_10_p2",
+          "ai_act_2024_1689:rct_67",
+          "ai_act_2024_1689:rct_68",
+          "ai_act_2024_1689:rct_69"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_10_p1"
+        ]
+      },
+      {
+        "id": "q07",
+        "question": "What is a risk management system and when must it run?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_9_p2",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:rct_71",
+          "ai_act_2024_1689:art_17"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_9_p1"
+        ]
+      },
+      {
+        "id": "q08",
+        "question": "What are the penalties for engaging in prohibited AI practices?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_99_p1",
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_164"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p1"
+        ]
+      },
+      {
+        "id": "q09",
+        "question": "Do I have to tell users they are talking to a chatbot?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_119",
+          "ai_act_2024_1689:rct_132",
+          "ai_act_2024_1689:art_50_p1",
+          "ai_act_2024_1689:rct_92",
+          "ai_act_2024_1689:rct_120"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p1"
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "What obligations apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_88",
+          "ai_act_2024_1689:rct_101",
+          "ai_act_2024_1689:art_54"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q11",
+        "question": "When does a general-purpose AI model present systemic risk?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_112",
+          "ai_act_2024_1689:rct_114",
+          "ai_act_2024_1689:art_3_p5",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:rct_113"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_51"
+        ]
+      },
+      {
+        "id": "q12",
+        "question": "Does the AI Act apply to systems used only for military purposes?",
+        "tags": [
+          "scope",
+          "exclusion"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_24",
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:art_111"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p1"
+        ]
+      },
+      {
+        "id": "q13",
+        "question": "What is the AI literacy obligation?",
+        "tags": [
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_4",
+          "ai_act_2024_1689:rct_20",
+          "ai_omnibus_2026_1744:rct_8",
+          "ai_act_2024_1689:rct_178",
+          "ai_act_2024_1689:rct_56"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_4"
+        ]
+      },
+      {
+        "id": "q14",
+        "question": "Can an individual get an explanation of a decision made about them by AI?",
+        "tags": [
+          "scenario",
+          "rights"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.2,
+        "retrieved": [
+          "ai_act_2024_1689:rct_12",
+          "ai_act_2024_1689:rct_171",
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:rct_163",
+          "ai_act_2024_1689:art_86"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_86"
+        ]
+      },
+      {
+        "id": "q15",
+        "question": "Where can someone complain about an AI system?",
+        "tags": [
+          "simple",
+          "rights"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:art_89",
+          "ai_act_2024_1689:rct_47",
+          "ai_act_2024_1689:rct_170"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_85"
+        ]
+      },
+      {
+        "id": "q16",
+        "question": "What is a regulatory sandbox and who can use it?",
+        "tags": [
+          "compound",
+          "innovation"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.2,
+        "retrieved": [
+          "ai_act_2024_1689:rct_138",
+          "ai_act_2024_1689:art_58_p1",
+          "ai_omnibus_2026_1744:rct_25",
+          "ai_act_2024_1689:art_57_p2",
+          "ai_act_2024_1689:art_57_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q17",
+        "question": "What must providers do after a high-risk system is on the market?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_25",
+          "ai_act_2024_1689:art_24",
+          "ai_act_2024_1689:art_9_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_72"
+        ]
+      },
+      {
+        "id": "q18",
+        "question": "Who is responsible when a company puts its own name on someone else's AI system?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_79",
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:art_25",
+          "ai_act_2024_1689:rct_85",
+          "ai_act_2024_1689:art_53"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_25"
+        ]
+      },
+      {
+        "id": "q19",
+        "question": "From what date do obligations for high-risk AI systems apply?",
+        "tags": [
+          "amendment",
+          "dates",
+          "hard"
+        ],
+        "hit": true,
+        "recall": 0.3333333333333333,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:rct_26",
+          "ai_act_2024_1689:art_6_p2",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:rct_178"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:art_113"
+        ]
+      },
+      {
+        "id": "q20",
+        "question": "Did the 2026 Digital Omnibus change the dates in the AI Act?",
+        "tags": [
+          "amendment",
+          "dates"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_177",
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:rct_38",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:art_110"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:art_1_p18"
+        ]
+      },
+      {
+        "id": "q21",
+        "question": "Why were the high-risk deadlines postponed?",
+        "tags": [
+          "amendment",
+          "reasoning"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_20",
+          "ai_act_2024_1689:rct_177",
+          "ai_omnibus_2026_1744:art_1_p18"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:rct_39"
+        ]
+      },
+      {
+        "id": "q24",
+        "question": "Does the AI Act ban facial recognition in shops?",
+        "tags": [
+          "scenario",
+          "hard",
+          "nuance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_43",
+          "ai_act_2024_1689:rct_44",
+          "ai_act_2024_1689:rct_39",
+          "ai_act_2024_1689:rct_63",
+          "ai_act_2024_1689:art_2_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1"
+        ]
+      },
+      {
+        "id": "q25",
+        "question": "What technical documentation must a provider of a high-risk system keep?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_18",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:rct_71",
+          "ai_act_2024_1689:art_9_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_11"
+        ]
+      },
+      {
+        "id": "q26",
+        "question": "Do high-risk AI systems have to keep logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_12",
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:rct_71",
+          "ai_act_2024_1689:art_21",
+          "ai_act_2024_1689:rct_65"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_12"
+        ]
+      },
+      {
+        "id": "q27",
+        "question": "How long must providers keep the automatically generated logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_12",
+          "ai_act_2024_1689:art_18",
+          "ai_act_2024_1689:art_36_p1",
+          "ai_act_2024_1689:art_21"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_19"
+        ]
+      },
+      {
+        "id": "q28",
+        "question": "What information must be given to deployers of a high-risk system?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_13",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:rct_72",
+          "ai_act_2024_1689:rct_65"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_13"
+        ]
+      },
+      {
+        "id": "q29",
+        "question": "What does the AI Act say about cybersecurity of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:art_42",
+          "ai_act_2024_1689:rct_76",
+          "ai_act_2024_1689:rct_7",
+          "ai_act_2024_1689:rct_122"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_15"
+        ]
+      },
+      {
+        "id": "q30",
+        "question": "What is a quality management system and who needs one?",
+        "tags": [
+          "compound",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_146",
+          "ai_act_2024_1689:rct_81",
+          "ai_act_2024_1689:anx_VII_p1",
+          "ai_act_2024_1689:anx_VI",
+          "ai_omnibus_2026_1744:rct_28"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_17"
+        ]
+      },
+      {
+        "id": "q31",
+        "question": "What are the obligations of deployers rather than providers?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:rct_13",
+          "ai_act_2024_1689:art_13",
+          "ai_act_2024_1689:art_62",
+          "ai_act_2024_1689:rct_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_26_p1"
+        ]
+      },
+      {
+        "id": "q32",
+        "question": "When is a fundamental rights impact assessment required?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_96",
+          "ai_act_2024_1689:art_27",
+          "ai_act_2024_1689:rct_48",
+          "ai_act_2024_1689:art_77",
+          "ai_omnibus_2026_1744:rct_14"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_27"
+        ]
+      },
+      {
+        "id": "q33",
+        "question": "What are the obligations of importers of high-risk AI systems?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:rct_85",
+          "ai_act_2024_1689:art_24",
+          "ai_act_2024_1689:rct_66",
+          "ai_act_2024_1689:art_16"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_23"
+        ]
+      },
+      {
+        "id": "q34",
+        "question": "Does a provider outside the EU need a representative in the EU?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:art_65",
+          "ai_act_2024_1689:rct_82",
+          "ai_act_2024_1689:rct_11",
+          "ai_act_2024_1689:art_54"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_22"
+        ]
+      },
+      {
+        "id": "q35",
+        "question": "What is the CE marking and when must it be affixed?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_48",
+          "ai_act_2024_1689:rct_129",
+          "ai_act_2024_1689:art_83",
+          "ai_act_2024_1689:art_29",
+          "ai_act_2024_1689:rct_150"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_48"
+        ]
+      },
+      {
+        "id": "q36",
+        "question": "What is an EU declaration of conformity?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:anx_V",
+          "ai_act_2024_1689:art_47",
+          "ai_omnibus_2026_1744:rct_17",
+          "ai_act_2024_1689:art_39",
+          "ai_act_2024_1689:art_32"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_47"
+        ]
+      },
+      {
+        "id": "q37",
+        "question": "What role do harmonised standards play?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_omnibus_2026_1744:rct_21",
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:art_43_p1",
+          "ai_act_2024_1689:rct_117"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_40"
+        ]
+      },
+      {
+        "id": "q38",
+        "question": "What happens if there are no harmonised standards?",
+        "tags": [
+          "compound",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:art_43_p1",
+          "ai_omnibus_2026_1744:rct_21",
+          "ai_act_2024_1689:art_32"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_41"
+        ]
+      },
+      {
+        "id": "q39",
+        "question": "Must high-risk AI systems be registered in a database?",
+        "tags": [
+          "compound",
+          "registration"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:art_49",
+          "ai_act_2024_1689:rct_131",
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:art_71"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:art_49"
+        ]
+      },
+      {
+        "id": "q40",
+        "question": "What must be reported when an AI system causes a serious incident?",
+        "tags": [
+          "simple",
+          "incidents"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_73_p1",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:rct_75",
+          "ai_act_2024_1689:rct_47"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_73_p1"
+        ]
+      },
+      {
+        "id": "q41",
+        "question": "Who supervises AI systems once they are on the market?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_omnibus_2026_1744:rct_31",
+          "ai_act_2024_1689:rct_161",
+          "ai_omnibus_2026_1744:rct_25"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_74_p1"
+        ]
+      },
+      {
+        "id": "q42",
+        "question": "What is the AI Board and what does it do?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:rct_12",
+          "ai_act_2024_1689:rct_20",
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:rct_85"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_66_p1"
+        ]
+      },
+      {
+        "id": "q43",
+        "question": "Are participants in real-world testing entitled to be told what is happening?",
+        "tags": [
+          "scenario",
+          "innovation"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_61",
+          "ai_act_2024_1689:art_76",
+          "ai_act_2024_1689:art_60_p2",
+          "ai_act_2024_1689:rct_141",
+          "ai_omnibus_2026_1744:rct_27"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_61"
+        ]
+      },
+      {
+        "id": "q44",
+        "question": "What confidentiality protections apply to information shared with authorities?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_78",
+          "ai_act_2024_1689:rct_69",
+          "ai_act_2024_1689:rct_167",
+          "ai_act_2024_1689:art_77",
+          "ai_act_2024_1689:rct_159"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_78"
+        ]
+      },
+      {
+        "id": "q45",
+        "question": "Is there anything in the AI Act for systems that are not high-risk?",
+        "tags": [
+          "scenario",
+          "voluntary"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:rct_166",
+          "ai_act_2024_1689:art_6_p2",
+          "ai_act_2024_1689:rct_26",
+          "ai_act_2024_1689:rct_75"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_95"
+        ]
+      },
+      {
+        "id": "q46",
+        "question": "What fines can be imposed on EU institutions themselves?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_168",
+          "ai_act_2024_1689:art_100",
+          "ai_act_2024_1689:art_99_p2",
+          "ai_act_2024_1689:rct_169",
+          "ai_act_2024_1689:art_99_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_100"
+        ]
+      },
+      {
+        "id": "q47",
+        "question": "What fines apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_101",
+          "ai_act_2024_1689:rct_162",
+          "ai_act_2024_1689:art_89",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:rct_109"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_101"
+        ]
+      },
+      {
+        "id": "q48",
+        "question": "What goes in the technical documentation for a general-purpose AI model?",
+        "tags": [
+          "compound",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:anx_XII",
+          "ai_act_2024_1689:rct_100",
+          "ai_act_2024_1689:rct_101"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q49",
+        "question": "Which products are covered by Annex I harmonisation legislation?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:art_1_p7",
+          "ai_omnibus_2026_1744:rct_5",
+          "ai_omnibus_2026_1744:art_1_p5",
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_act_2024_1689:rct_46"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_I_p1"
+        ]
+      },
+      {
+        "id": "q50",
+        "question": "Can a small company test an AI system before full compliance?",
+        "tags": [
+          "compound",
+          "innovation",
+          "scenario"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_60_p1",
+          "ai_omnibus_2026_1744:rct_26",
+          "ai_act_2024_1689:art_60_p3",
+          "ai_act_2024_1689:art_58_p2",
+          "ai_act_2024_1689:art_60_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q51",
+        "question": "What does the Act say about deepfakes?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_134",
+          "ai_act_2024_1689:anx_II",
+          "ai_act_2024_1689:art_93",
+          "ai_act_2024_1689:art_103",
+          "ai_act_2024_1689:rct_154"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p2"
+        ]
+      },
+      {
+        "id": "q52",
+        "question": "Does the AI Act apply to free and open-source AI?",
+        "tags": [
+          "scenario",
+          "scope",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_103",
+          "ai_act_2024_1689:rct_102",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:rct_89"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p2"
+        ]
+      },
+      {
+        "id": "q53",
+        "question": "Who writes the codes of practice for general-purpose AI?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_116",
+          "ai_act_2024_1689:rct_117",
+          "ai_act_2024_1689:art_56_p2",
+          "ai_act_2024_1689:rct_85",
+          "ai_act_2024_1689:art_66_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_56_p1"
+        ]
+      },
+      {
+        "id": "q55",
+        "question": "What is the penalty for supplying incorrect information to notified bodies?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_37",
+          "ai_act_2024_1689:art_36_p1",
+          "ai_act_2024_1689:art_45",
+          "ai_omnibus_2026_1744:art_1_p15",
+          "ai_act_2024_1689:art_34"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p2"
+        ]
+      },
+      {
+        "id": "q22",
+        "question": "What is the capital of France?",
+        "tags": [
+          "unanswerable",
+          "off-topic"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -10.392572402954102,
+        "gold": []
+      },
+      {
+        "id": "q23",
+        "question": "How much does it cost to certify an AI system in Germany?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.890353679656982,
+        "gold": []
+      },
+      {
+        "id": "q54",
+        "question": "How many employees does a company need before the AI Act applies?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.476099967956543,
+        "gold": []
+      }
+    ]
+  },
+  {
+    "mode": "keyword",
+    "k": 5,
+    "questions": 55,
+    "hit_rate": 0.5961538461538461,
+    "recall": 0.5737179487179487,
+    "mrr": 0.35608974358974355,
+    "refusal_rate": 1.0,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is the definition of an AI system under the AI Act?",
+        "tags": [
+          "definition",
+          "simple"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_91",
+          "ai_act_2024_1689:rct_97",
+          "ai_omnibus_2026_1744:art_1_p11",
+          "ai_act_2024_1689:rct_12"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_3_p1"
+        ]
+      },
+      {
+        "id": "q02",
+        "question": "Which AI practices are prohibited?",
+        "tags": [
+          "simple",
+          "prohibited"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_29",
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:rct_31",
+          "ai_act_2024_1689:rct_67",
+          "ai_act_2024_1689:rct_45"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_5_p2"
+        ]
+      },
+      {
+        "id": "q03",
+        "question": "When is an AI system classified as high-risk?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_80",
+          "ai_act_2024_1689:rct_54",
+          "ai_act_2024_1689:art_51",
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:rct_61"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q04",
+        "question": "Is CV screening software for recruitment high-risk?",
+        "tags": [
+          "scenario",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_57",
+          "ai_act_2024_1689:rct_128",
+          "ai_act_2024_1689:rct_102",
+          "ai_act_2024_1689:rct_103",
+          "ai_act_2024_1689:anx_XII"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_III_p1",
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q05",
+        "question": "What does the AI Act require for human oversight of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_73",
+          "ai_act_2024_1689:art_14",
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:rct_91",
+          "ai_act_2024_1689:rct_66"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_14"
+        ]
+      },
+      {
+        "id": "q06",
+        "question": "What are the data governance requirements for training data?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_67",
+          "ai_act_2024_1689:rct_69",
+          "ai_act_2024_1689:art_10_p1",
+          "ai_act_2024_1689:rct_68",
+          "ai_act_2024_1689:art_26_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_10_p1"
+        ]
+      },
+      {
+        "id": "q07",
+        "question": "What is a risk management system and when must it run?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_act_2024_1689:rct_61",
+          "ai_act_2024_1689:anx_VII_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_9_p1"
+        ]
+      },
+      {
+        "id": "q08",
+        "question": "What are the penalties for engaging in prohibited AI practices?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_29",
+          "ai_act_2024_1689:rct_67",
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:rct_31",
+          "ai_act_2024_1689:rct_157"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p1"
+        ]
+      },
+      {
+        "id": "q09",
+        "question": "Do I have to tell users they are talking to a chatbot?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_102",
+          "ai_act_2024_1689:rct_16",
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_omnibus_2026_1744:rct_36",
+          "ai_act_2024_1689:rct_119"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p1"
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "What obligations apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:rct_164",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:rct_179"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q11",
+        "question": "When does a general-purpose AI model present systemic risk?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.2,
+        "retrieved": [
+          "ai_act_2024_1689:art_52",
+          "ai_act_2024_1689:rct_112",
+          "ai_act_2024_1689:rct_111",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:art_51"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_51"
+        ]
+      },
+      {
+        "id": "q12",
+        "question": "Does the AI Act apply to systems used only for military purposes?",
+        "tags": [
+          "scope",
+          "exclusion"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_24",
+          "ai_act_2024_1689:art_2_p1",
+          "ai_act_2024_1689:art_43_p1",
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_omnibus_2026_1744:art_1_p3"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p1"
+        ]
+      },
+      {
+        "id": "q13",
+        "question": "What is the AI literacy obligation?",
+        "tags": [
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_8",
+          "ai_omnibus_2026_1744:art_1_p1",
+          "ai_act_2024_1689:art_4",
+          "ai_act_2024_1689:rct_20",
+          "ai_act_2024_1689:rct_134"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_4"
+        ]
+      },
+      {
+        "id": "q14",
+        "question": "Can an individual get an explanation of a decision made about them by AI?",
+        "tags": [
+          "scenario",
+          "rights"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_86",
+          "ai_act_2024_1689:rct_72",
+          "ai_act_2024_1689:rct_61",
+          "ai_act_2024_1689:rct_171",
+          "ai_act_2024_1689:rct_93"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_86"
+        ]
+      },
+      {
+        "id": "q15",
+        "question": "Where can someone complain about an AI system?",
+        "tags": [
+          "simple",
+          "rights"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_93",
+          "ai_act_2024_1689:anx_IV_p1",
+          "ai_act_2024_1689:rct_72",
+          "ai_act_2024_1689:rct_44",
+          "ai_act_2024_1689:rct_104"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_85"
+        ]
+      },
+      {
+        "id": "q16",
+        "question": "What is a regulatory sandbox and who can use it?",
+        "tags": [
+          "compound",
+          "innovation"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_58_p1",
+          "ai_omnibus_2026_1744:art_1_p8",
+          "ai_act_2024_1689:art_3_p4",
+          "ai_act_2024_1689:art_59_p1",
+          "ai_act_2024_1689:rct_138"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q17",
+        "question": "What must providers do after a high-risk system is on the market?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_61",
+          "ai_act_2024_1689:art_23",
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_6_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_72"
+        ]
+      },
+      {
+        "id": "q18",
+        "question": "Who is responsible when a company puts its own name on someone else's AI system?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:rct_84",
+          "ai_act_2024_1689:anx_V",
+          "ai_act_2024_1689:rct_97",
+          "ai_omnibus_2026_1744:art_1_p11"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_25"
+        ]
+      },
+      {
+        "id": "q19",
+        "question": "From what date do obligations for high-risk AI systems apply?",
+        "tags": [
+          "amendment",
+          "dates",
+          "hard"
+        ],
+        "hit": true,
+        "recall": 0.3333333333333333,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_39",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_53",
+          "ai_omnibus_2026_1744:rct_9"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:art_113"
+        ]
+      },
+      {
+        "id": "q20",
+        "question": "Did the 2026 Digital Omnibus change the dates in the AI Act?",
+        "tags": [
+          "amendment",
+          "dates"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:art_72",
+          "ai_act_2024_1689:rct_4",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_act_2024_1689:rct_179"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:art_1_p18"
+        ]
+      },
+      {
+        "id": "q21",
+        "question": "Why were the high-risk deadlines postponed?",
+        "tags": [
+          "amendment",
+          "reasoning"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_10_p2",
+          "ai_act_2024_1689:rct_93",
+          "ai_act_2024_1689:rct_180",
+          "ai_omnibus_2026_1744:rct_47",
+          "ai_omnibus_2026_1744:art_1_p2"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:rct_39"
+        ]
+      },
+      {
+        "id": "q24",
+        "question": "Does the AI Act ban facial recognition in shops?",
+        "tags": [
+          "scenario",
+          "hard",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_18",
+          "ai_act_2024_1689:rct_43",
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_16",
+          "ai_act_2024_1689:art_3_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1"
+        ]
+      },
+      {
+        "id": "q25",
+        "question": "What technical documentation must a provider of a high-risk system keep?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_18",
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_47"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_11"
+        ]
+      },
+      {
+        "id": "q26",
+        "question": "Do high-risk AI systems have to keep logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:art_21"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_12"
+        ]
+      },
+      {
+        "id": "q27",
+        "question": "How long must providers keep the automatically generated logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_21",
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:rct_73"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_19"
+        ]
+      },
+      {
+        "id": "q28",
+        "question": "What information must be given to deployers of a high-risk system?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.2,
+        "retrieved": [
+          "ai_act_2024_1689:rct_96",
+          "ai_act_2024_1689:art_26_p2",
+          "ai_act_2024_1689:art_27",
+          "ai_act_2024_1689:rct_91",
+          "ai_act_2024_1689:art_13"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_13"
+        ]
+      },
+      {
+        "id": "q29",
+        "question": "What does the AI Act say about cybersecurity of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:rct_77",
+          "ai_act_2024_1689:art_15",
+          "ai_act_2024_1689:rct_131",
+          "ai_act_2024_1689:rct_78"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_15"
+        ]
+      },
+      {
+        "id": "q30",
+        "question": "What is a quality management system and who needs one?",
+        "tags": [
+          "compound",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.2,
+        "retrieved": [
+          "ai_act_2024_1689:anx_VII_p1",
+          "ai_act_2024_1689:rct_146",
+          "ai_omnibus_2026_1744:rct_18",
+          "ai_act_2024_1689:art_63",
+          "ai_act_2024_1689:art_17"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_17"
+        ]
+      },
+      {
+        "id": "q31",
+        "question": "What are the obligations of deployers rather than providers?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_176",
+          "ai_act_2024_1689:art_26_p2",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_111",
+          "ai_act_2024_1689:art_60_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_26_p1"
+        ]
+      },
+      {
+        "id": "q32",
+        "question": "When is a fundamental rights impact assessment required?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_omnibus_2026_1744:art_1_p4",
+          "ai_act_2024_1689:rct_96",
+          "ai_act_2024_1689:art_27",
+          "ai_act_2024_1689:art_7",
+          "ai_act_2024_1689:rct_48"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_27"
+        ]
+      },
+      {
+        "id": "q33",
+        "question": "What are the obligations of importers of high-risk AI systems?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_20",
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_2_p1",
+          "ai_act_2024_1689:art_74_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_23"
+        ]
+      },
+      {
+        "id": "q34",
+        "question": "Does a provider outside the EU need a representative in the EU?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:art_60_p1",
+          "ai_act_2024_1689:art_61",
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:art_3_p4",
+          "ai_act_2024_1689:art_60_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_22"
+        ]
+      },
+      {
+        "id": "q35",
+        "question": "What is the CE marking and when must it be affixed?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_48",
+          "ai_act_2024_1689:rct_129",
+          "ai_act_2024_1689:art_83",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:rct_133"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_48"
+        ]
+      },
+      {
+        "id": "q36",
+        "question": "What is an EU declaration of conformity?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_47",
+          "ai_act_2024_1689:anx_V",
+          "ai_act_2024_1689:art_83",
+          "ai_act_2024_1689:anx_VII_p1",
+          "ai_act_2024_1689:art_23"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_47"
+        ]
+      },
+      {
+        "id": "q37",
+        "question": "What role do harmonised standards play?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:rct_93",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:rct_88"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_40"
+        ]
+      },
+      {
+        "id": "q38",
+        "question": "What happens if there are no harmonised standards?",
+        "tags": [
+          "compound",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:art_40",
+          "ai_act_2024_1689:rct_117",
+          "ai_omnibus_2026_1744:art_3_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_41"
+        ]
+      },
+      {
+        "id": "q39",
+        "question": "Must high-risk AI systems be registered in a database?",
+        "tags": [
+          "compound",
+          "registration"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:rct_131",
+          "ai_omnibus_2026_1744:rct_22",
+          "ai_act_2024_1689:art_49",
+          "ai_act_2024_1689:anx_VIII_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:art_49"
+        ]
+      },
+      {
+        "id": "q40",
+        "question": "What must be reported when an AI system causes a serious incident?",
+        "tags": [
+          "simple",
+          "incidents"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_73_p1",
+          "ai_act_2024_1689:rct_115",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:art_3_p3",
+          "ai_act_2024_1689:art_60_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_73_p1"
+        ]
+      },
+      {
+        "id": "q41",
+        "question": "Who supervises AI systems once they are on the market?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:rct_60",
+          "ai_act_2024_1689:rct_82"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_74_p1"
+        ]
+      },
+      {
+        "id": "q42",
+        "question": "What is the AI Board and what does it do?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:rct_176",
+          "ai_act_2024_1689:art_91",
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_act_2024_1689:art_6_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_66_p1"
+        ]
+      },
+      {
+        "id": "q43",
+        "question": "Are participants in real-world testing entitled to be told what is happening?",
+        "tags": [
+          "scenario",
+          "innovation"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:art_60_p1",
+          "ai_act_2024_1689:art_60_p2",
+          "ai_act_2024_1689:rct_141",
+          "ai_act_2024_1689:art_61",
+          "ai_act_2024_1689:art_76"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_61"
+        ]
+      },
+      {
+        "id": "q44",
+        "question": "What confidentiality protections apply to information shared with authorities?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_78",
+          "ai_act_2024_1689:art_75",
+          "ai_act_2024_1689:art_74_p2",
+          "ai_act_2024_1689:art_21",
+          "ai_act_2024_1689:art_53"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_78"
+        ]
+      },
+      {
+        "id": "q45",
+        "question": "Is there anything in the AI Act for systems that are not high-risk?",
+        "tags": [
+          "scenario",
+          "voluntary"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_6_p1",
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_act_2024_1689:art_72",
+          "ai_act_2024_1689:rct_38",
+          "ai_act_2024_1689:art_7"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_95"
+        ]
+      },
+      {
+        "id": "q46",
+        "question": "What fines can be imposed on EU institutions themselves?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:art_99_p2",
+          "ai_act_2024_1689:art_100",
+          "ai_act_2024_1689:art_101",
+          "ai_act_2024_1689:rct_169",
+          "ai_act_2024_1689:rct_168"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_100"
+        ]
+      },
+      {
+        "id": "q47",
+        "question": "What fines apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_101",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:rct_169",
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_101"
+        ]
+      },
+      {
+        "id": "q48",
+        "question": "What goes in the technical documentation for a general-purpose AI model?",
+        "tags": [
+          "compound",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:art_91",
+          "ai_act_2024_1689:anx_XII",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:art_54"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q49",
+        "question": "Which products are covered by Annex I harmonisation legislation?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:art_1_p9",
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_omnibus_2026_1744:rct_26",
+          "ai_omnibus_2026_1744:art_1_p5",
+          "ai_omnibus_2026_1744:art_1_p7"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_I_p1"
+        ]
+      },
+      {
+        "id": "q50",
+        "question": "Can a small company test an AI system before full compliance?",
+        "tags": [
+          "compound",
+          "innovation",
+          "scenario"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_17",
+          "ai_act_2024_1689:anx_IV_p1",
+          "ai_act_2024_1689:art_11",
+          "ai_act_2024_1689:rct_80",
+          "ai_omnibus_2026_1744:art_1_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q51",
+        "question": "What does the Act say about deepfakes?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_99_p2",
+          "ai_act_2024_1689:rct_176",
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_37",
+          "ai_act_2024_1689:art_3_p4"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p2"
+        ]
+      },
+      {
+        "id": "q52",
+        "question": "Does the AI Act apply to free and open-source AI?",
+        "tags": [
+          "scenario",
+          "scope",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_103",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_89",
+          "ai_act_2024_1689:rct_102"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p2"
+        ]
+      },
+      {
+        "id": "q53",
+        "question": "Who writes the codes of practice for general-purpose AI?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_116",
+          "ai_act_2024_1689:art_56_p1",
+          "ai_act_2024_1689:rct_117",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_53"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_56_p1"
+        ]
+      },
+      {
+        "id": "q55",
+        "question": "What is the penalty for supplying incorrect information to notified bodies?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_91",
+          "ai_omnibus_2026_1744:art_1_p12",
+          "ai_act_2024_1689:art_101",
+          "ai_omnibus_2026_1744:art_1_p15",
+          "ai_act_2024_1689:art_99_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p2"
+        ]
+      },
+      {
+        "id": "q22",
+        "question": "What is the capital of France?",
+        "tags": [
+          "unanswerable",
+          "off-topic"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -10.392572402954102,
+        "gold": []
+      },
+      {
+        "id": "q23",
+        "question": "How much does it cost to certify an AI system in Germany?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.890353679656982,
+        "gold": []
+      },
+      {
+        "id": "q54",
+        "question": "How many employees does a company need before the AI Act applies?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.476099967956543,
+        "gold": []
+      }
+    ]
+  },
+  {
+    "mode": "hybrid",
+    "k": 5,
+    "questions": 55,
+    "hit_rate": 0.6923076923076923,
+    "recall": 0.657051282051282,
+    "mrr": 0.4782051282051282,
+    "refusal_rate": 1.0,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is the definition of an AI system under the AI Act?",
+        "tags": [
+          "definition",
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_12",
+          "ai_act_2024_1689:rct_97",
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:art_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_3_p1"
+        ]
+      },
+      {
+        "id": "q02",
+        "question": "Which AI practices are prohibited?",
+        "tags": [
+          "simple",
+          "prohibited"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_27",
+          "ai_act_2024_1689:rct_157",
+          "ai_act_2024_1689:rct_29"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_5_p2"
+        ]
+      },
+      {
+        "id": "q03",
+        "question": "When is an AI system classified as high-risk?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_80",
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:rct_54"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q04",
+        "question": "Is CV screening software for recruitment high-risk?",
+        "tags": [
+          "scenario",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_57",
+          "ai_act_2024_1689:art_26_p2",
+          "ai_act_2024_1689:rct_54",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:rct_125"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_III_p1",
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q05",
+        "question": "What does the AI Act require for human oversight of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_14",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:rct_27",
+          "ai_act_2024_1689:rct_91",
+          "ai_act_2024_1689:rct_73"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_14"
+        ]
+      },
+      {
+        "id": "q06",
+        "question": "What are the data governance requirements for training data?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_67",
+          "ai_act_2024_1689:art_10_p1",
+          "ai_act_2024_1689:rct_69",
+          "ai_act_2024_1689:art_10_p2",
+          "ai_act_2024_1689:rct_68"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_10_p1"
+        ]
+      },
+      {
+        "id": "q07",
+        "question": "What is a risk management system and when must it run?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_17",
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_8"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_9_p1"
+        ]
+      },
+      {
+        "id": "q08",
+        "question": "What are the penalties for engaging in prohibited AI practices?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_99_p1",
+          "ai_act_2024_1689:rct_29",
+          "ai_act_2024_1689:rct_179"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p1"
+        ]
+      },
+      {
+        "id": "q09",
+        "question": "Do I have to tell users they are talking to a chatbot?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_119",
+          "ai_act_2024_1689:rct_102",
+          "ai_act_2024_1689:rct_16",
+          "ai_act_2024_1689:rct_132",
+          "ai_act_2024_1689:rct_53_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p1"
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "What obligations apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_54",
+          "ai_act_2024_1689:rct_101"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q11",
+        "question": "When does a general-purpose AI model present systemic risk?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_112",
+          "ai_act_2024_1689:art_52",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:rct_113",
+          "ai_act_2024_1689:rct_114"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_51"
+        ]
+      },
+      {
+        "id": "q12",
+        "question": "Does the AI Act apply to systems used only for military purposes?",
+        "tags": [
+          "scope",
+          "exclusion"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_24",
+          "ai_act_2024_1689:art_2_p1",
+          "ai_act_2024_1689:rct_25",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:art_43_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p1"
+        ]
+      },
+      {
+        "id": "q13",
+        "question": "What is the AI literacy obligation?",
+        "tags": [
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_8",
+          "ai_act_2024_1689:art_4",
+          "ai_act_2024_1689:rct_20",
+          "ai_act_2024_1689:rct_56",
+          "ai_act_2024_1689:art_50_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_4"
+        ]
+      },
+      {
+        "id": "q14",
+        "question": "Can an individual get an explanation of a decision made about them by AI?",
+        "tags": [
+          "scenario",
+          "rights"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_86",
+          "ai_act_2024_1689:rct_171",
+          "ai_act_2024_1689:rct_72",
+          "ai_act_2024_1689:rct_29",
+          "ai_act_2024_1689:rct_44"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_86"
+        ]
+      },
+      {
+        "id": "q15",
+        "question": "Where can someone complain about an AI system?",
+        "tags": [
+          "simple",
+          "rights"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_162",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:rct_93",
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:anx_IV_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_85"
+        ]
+      },
+      {
+        "id": "q16",
+        "question": "What is a regulatory sandbox and who can use it?",
+        "tags": [
+          "compound",
+          "innovation"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.2,
+        "retrieved": [
+          "ai_act_2024_1689:art_58_p1",
+          "ai_act_2024_1689:rct_138",
+          "ai_omnibus_2026_1744:art_1_p8",
+          "ai_act_2024_1689:art_57_p2",
+          "ai_act_2024_1689:art_57_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q17",
+        "question": "What must providers do after a high-risk system is on the market?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_24",
+          "ai_act_2024_1689:art_25",
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:art_22"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_72"
+        ]
+      },
+      {
+        "id": "q18",
+        "question": "Who is responsible when a company puts its own name on someone else's AI system?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:rct_84",
+          "ai_act_2024_1689:art_25",
+          "ai_act_2024_1689:anx_VIII_p1",
+          "ai_act_2024_1689:art_26_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_25"
+        ]
+      },
+      {
+        "id": "q19",
+        "question": "From what date do obligations for high-risk AI systems apply?",
+        "tags": [
+          "amendment",
+          "dates",
+          "hard"
+        ],
+        "hit": true,
+        "recall": 0.6666666666666666,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:rct_177",
+          "ai_omnibus_2026_1744:rct_39"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:art_113"
+        ]
+      },
+      {
+        "id": "q20",
+        "question": "Did the 2026 Digital Omnibus change the dates in the AI Act?",
+        "tags": [
+          "amendment",
+          "dates"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:rct_177",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_act_2024_1689:art_111"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:art_1_p18"
+        ]
+      },
+      {
+        "id": "q21",
+        "question": "Why were the high-risk deadlines postponed?",
+        "tags": [
+          "amendment",
+          "reasoning"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_20",
+          "ai_act_2024_1689:art_36_p1",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:rct_65"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:rct_39"
+        ]
+      },
+      {
+        "id": "q24",
+        "question": "Does the AI Act ban facial recognition in shops?",
+        "tags": [
+          "scenario",
+          "hard",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_43",
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_16",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_18"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1"
+        ]
+      },
+      {
+        "id": "q25",
+        "question": "What technical documentation must a provider of a high-risk system keep?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:art_18",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_11",
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_22"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_11"
+        ]
+      },
+      {
+        "id": "q26",
+        "question": "Do high-risk AI systems have to keep logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_12",
+          "ai_act_2024_1689:rct_71",
+          "ai_act_2024_1689:art_21"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_12"
+        ]
+      },
+      {
+        "id": "q27",
+        "question": "How long must providers keep the automatically generated logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_21",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:rct_71",
+          "ai_omnibus_2026_1744:rct_39"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_19"
+        ]
+      },
+      {
+        "id": "q28",
+        "question": "What information must be given to deployers of a high-risk system?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_13",
+          "ai_act_2024_1689:art_27",
+          "ai_act_2024_1689:rct_72",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_26_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_13"
+        ]
+      },
+      {
+        "id": "q29",
+        "question": "What does the AI Act say about cybersecurity of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_42",
+          "ai_act_2024_1689:rct_76",
+          "ai_act_2024_1689:rct_122",
+          "ai_act_2024_1689:rct_77",
+          "ai_act_2024_1689:anx_IV_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_15"
+        ]
+      },
+      {
+        "id": "q30",
+        "question": "What is a quality management system and who needs one?",
+        "tags": [
+          "compound",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_146",
+          "ai_act_2024_1689:anx_VII_p1",
+          "ai_act_2024_1689:rct_81",
+          "ai_act_2024_1689:art_17",
+          "ai_act_2024_1689:art_63"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_17"
+        ]
+      },
+      {
+        "id": "q31",
+        "question": "What are the obligations of deployers rather than providers?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_62",
+          "ai_omnibus_2026_1744:art_1_p4",
+          "ai_act_2024_1689:rct_143",
+          "ai_act_2024_1689:rct_72"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_26_p1"
+        ]
+      },
+      {
+        "id": "q32",
+        "question": "When is a fundamental rights impact assessment required?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_96",
+          "ai_act_2024_1689:art_27",
+          "ai_act_2024_1689:rct_48",
+          "ai_act_2024_1689:art_7",
+          "ai_act_2024_1689:rct_171"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_27"
+        ]
+      },
+      {
+        "id": "q33",
+        "question": "What are the obligations of importers of high-risk AI systems?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_20",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_25"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_23"
+        ]
+      },
+      {
+        "id": "q34",
+        "question": "Does a provider outside the EU need a representative in the EU?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:art_54",
+          "ai_act_2024_1689:art_49",
+          "ai_act_2024_1689:anx_V",
+          "ai_act_2024_1689:art_83"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_22"
+        ]
+      },
+      {
+        "id": "q35",
+        "question": "What is the CE marking and when must it be affixed?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_48",
+          "ai_act_2024_1689:rct_129",
+          "ai_act_2024_1689:art_83",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_3_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_48"
+        ]
+      },
+      {
+        "id": "q36",
+        "question": "What is an EU declaration of conformity?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_47",
+          "ai_act_2024_1689:anx_V",
+          "ai_act_2024_1689:art_83",
+          "ai_omnibus_2026_1744:rct_17",
+          "ai_act_2024_1689:anx_VII_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_47"
+        ]
+      },
+      {
+        "id": "q37",
+        "question": "What role do harmonised standards play?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:art_43_p1",
+          "ai_omnibus_2026_1744:rct_21",
+          "ai_act_2024_1689:art_32"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_40"
+        ]
+      },
+      {
+        "id": "q38",
+        "question": "What happens if there are no harmonised standards?",
+        "tags": [
+          "compound",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:art_43_p1",
+          "ai_act_2024_1689:rct_117",
+          "ai_omnibus_2026_1744:rct_21"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_41"
+        ]
+      },
+      {
+        "id": "q39",
+        "question": "Must high-risk AI systems be registered in a database?",
+        "tags": [
+          "compound",
+          "registration"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_131",
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:art_49",
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:anx_VIII_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:art_49"
+        ]
+      },
+      {
+        "id": "q40",
+        "question": "What must be reported when an AI system causes a serious incident?",
+        "tags": [
+          "simple",
+          "incidents"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_73_p1",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:rct_115"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_73_p1"
+        ]
+      },
+      {
+        "id": "q41",
+        "question": "Who supervises AI systems once they are on the market?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_2_p2",
+          "ai_omnibus_2026_1744:rct_31",
+          "ai_act_2024_1689:rct_97",
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:art_26_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_74_p1"
+        ]
+      },
+      {
+        "id": "q42",
+        "question": "What is the AI Board and what does it do?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_7",
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:rct_176",
+          "ai_act_2024_1689:rct_12",
+          "ai_act_2024_1689:art_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_66_p1"
+        ]
+      },
+      {
+        "id": "q43",
+        "question": "Are participants in real-world testing entitled to be told what is happening?",
+        "tags": [
+          "scenario",
+          "innovation"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_61",
+          "ai_act_2024_1689:art_60_p2",
+          "ai_act_2024_1689:art_60_p1",
+          "ai_act_2024_1689:art_76",
+          "ai_act_2024_1689:rct_141"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_61"
+        ]
+      },
+      {
+        "id": "q44",
+        "question": "What confidentiality protections apply to information shared with authorities?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_78",
+          "ai_act_2024_1689:rct_167",
+          "ai_act_2024_1689:art_74_p2",
+          "ai_act_2024_1689:rct_154",
+          "ai_act_2024_1689:art_21"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_78"
+        ]
+      },
+      {
+        "id": "q45",
+        "question": "Is there anything in the AI Act for systems that are not high-risk?",
+        "tags": [
+          "scenario",
+          "voluntary"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_act_2024_1689:art_6_p1",
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_14"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_95"
+        ]
+      },
+      {
+        "id": "q46",
+        "question": "What fines can be imposed on EU institutions themselves?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:art_99_p2",
+          "ai_act_2024_1689:art_100",
+          "ai_act_2024_1689:rct_168",
+          "ai_act_2024_1689:rct_169",
+          "ai_omnibus_2026_1744:art_1_p15"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_100"
+        ]
+      },
+      {
+        "id": "q47",
+        "question": "What fines apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_101",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:rct_169",
+          "ai_act_2024_1689:rct_162",
+          "ai_act_2024_1689:art_53"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_101"
+        ]
+      },
+      {
+        "id": "q48",
+        "question": "What goes in the technical documentation for a general-purpose AI model?",
+        "tags": [
+          "compound",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:anx_XII",
+          "ai_act_2024_1689:rct_101",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:rct_97"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q49",
+        "question": "Which products are covered by Annex I harmonisation legislation?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:art_1_p7",
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_omnibus_2026_1744:art_1_p5",
+          "ai_omnibus_2026_1744:rct_5",
+          "ai_act_2024_1689:rct_124"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_I_p1"
+        ]
+      },
+      {
+        "id": "q50",
+        "question": "Can a small company test an AI system before full compliance?",
+        "tags": [
+          "compound",
+          "innovation",
+          "scenario"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:art_1_p9",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:art_17",
+          "ai_act_2024_1689:art_60_p1",
+          "ai_act_2024_1689:anx_IV_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q51",
+        "question": "What does the Act say about deepfakes?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_56_p1",
+          "ai_act_2024_1689:art_99_p2",
+          "ai_act_2024_1689:rct_134",
+          "ai_act_2024_1689:rct_176",
+          "ai_act_2024_1689:anx_II"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p2"
+        ]
+      },
+      {
+        "id": "q52",
+        "question": "Does the AI Act apply to free and open-source AI?",
+        "tags": [
+          "scenario",
+          "scope",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_103",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:rct_102",
+          "ai_act_2024_1689:rct_89"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p2"
+        ]
+      },
+      {
+        "id": "q53",
+        "question": "Who writes the codes of practice for general-purpose AI?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_116",
+          "ai_act_2024_1689:rct_117",
+          "ai_act_2024_1689:art_56_p2",
+          "ai_act_2024_1689:art_50_p2",
+          "ai_act_2024_1689:art_53"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_56_p1"
+        ]
+      },
+      {
+        "id": "q55",
+        "question": "What is the penalty for supplying incorrect information to notified bodies?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:art_1_p15",
+          "ai_act_2024_1689:art_37",
+          "ai_act_2024_1689:art_45",
+          "ai_act_2024_1689:art_31_p1",
+          "ai_act_2024_1689:art_35"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p2"
+        ]
+      },
+      {
+        "id": "q22",
+        "question": "What is the capital of France?",
+        "tags": [
+          "unanswerable",
+          "off-topic"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -10.392572402954102,
+        "gold": []
+      },
+      {
+        "id": "q23",
+        "question": "How much does it cost to certify an AI system in Germany?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.890353679656982,
+        "gold": []
+      },
+      {
+        "id": "q54",
+        "question": "How many employees does a company need before the AI Act applies?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.476099967956543,
+        "gold": []
+      }
+    ]
+  },
+  {
+    "mode": "rerank",
+    "k": 5,
+    "questions": 55,
+    "hit_rate": 0.7692307692307693,
+    "recall": 0.7243589743589743,
+    "mrr": 0.5496794871794871,
+    "refusal_rate": 1.0,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is the definition of an AI system under the AI Act?",
+        "tags": [
+          "definition",
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:rct_12",
+          "ai_act_2024_1689:rct_62",
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:rct_85"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_3_p1"
+        ]
+      },
+      {
+        "id": "q02",
+        "question": "Which AI practices are prohibited?",
+        "tags": [
+          "simple",
+          "prohibited"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:rct_26",
+          "ai_act_2024_1689:rct_31",
+          "ai_act_2024_1689:rct_45"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_5_p2"
+        ]
+      },
+      {
+        "id": "q03",
+        "question": "When is an AI system classified as high-risk?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_51",
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:rct_61",
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_act_2024_1689:rct_63"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q04",
+        "question": "Is CV screening software for recruitment high-risk?",
+        "tags": [
+          "scenario",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_57",
+          "ai_act_2024_1689:anx_III_p1",
+          "ai_act_2024_1689:art_60_p2",
+          "ai_act_2024_1689:art_26_p2",
+          "ai_act_2024_1689:art_13"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_III_p1",
+          "ai_act_2024_1689:art_6_p1"
+        ]
+      },
+      {
+        "id": "q05",
+        "question": "What does the AI Act require for human oversight of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_66",
+          "ai_act_2024_1689:art_14",
+          "ai_act_2024_1689:rct_73",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:rct_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_14"
+        ]
+      },
+      {
+        "id": "q06",
+        "question": "What are the data governance requirements for training data?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_10_p1",
+          "ai_act_2024_1689:rct_67",
+          "ai_act_2024_1689:art_10_p2",
+          "ai_act_2024_1689:rct_69",
+          "ai_act_2024_1689:rct_68"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_10_p1"
+        ]
+      },
+      {
+        "id": "q07",
+        "question": "What is a risk management system and when must it run?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_65",
+          "ai_act_2024_1689:art_9_p1",
+          "ai_act_2024_1689:art_9_p2",
+          "ai_act_2024_1689:art_17",
+          "ai_act_2024_1689:art_8"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_9_p1"
+        ]
+      },
+      {
+        "id": "q08",
+        "question": "What are the penalties for engaging in prohibited AI practices?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:art_112_p1",
+          "ai_act_2024_1689:rct_28",
+          "ai_act_2024_1689:rct_179",
+          "ai_omnibus_2026_1744:rct_12_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p1"
+        ]
+      },
+      {
+        "id": "q09",
+        "question": "Do I have to tell users they are talking to a chatbot?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_119",
+          "ai_act_2024_1689:art_50_p1",
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_act_2024_1689:rct_17",
+          "ai_act_2024_1689:art_13"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p1"
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "What obligations apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_109",
+          "ai_act_2024_1689:rct_114",
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:rct_106"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q11",
+        "question": "When does a general-purpose AI model present systemic risk?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_111",
+          "ai_act_2024_1689:rct_112",
+          "ai_act_2024_1689:rct_115",
+          "ai_act_2024_1689:art_51",
+          "ai_act_2024_1689:rct_113"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_55",
+          "ai_act_2024_1689:art_51"
+        ]
+      },
+      {
+        "id": "q12",
+        "question": "Does the AI Act apply to systems used only for military purposes?",
+        "tags": [
+          "scope",
+          "exclusion"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_24",
+          "ai_act_2024_1689:art_2_p1",
+          "ai_act_2024_1689:rct_38",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_64"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p1"
+        ]
+      },
+      {
+        "id": "q13",
+        "question": "What is the AI literacy obligation?",
+        "tags": [
+          "simple"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_8",
+          "ai_act_2024_1689:art_4",
+          "ai_act_2024_1689:rct_20",
+          "ai_omnibus_2026_1744:art_1_p2",
+          "ai_act_2024_1689:rct_56"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_4"
+        ]
+      },
+      {
+        "id": "q14",
+        "question": "Can an individual get an explanation of a decision made about them by AI?",
+        "tags": [
+          "scenario",
+          "rights"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_86",
+          "ai_act_2024_1689:rct_171",
+          "ai_act_2024_1689:rct_61",
+          "ai_act_2024_1689:rct_29",
+          "ai_act_2024_1689:rct_53_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_86"
+        ]
+      },
+      {
+        "id": "q15",
+        "question": "Where can someone complain about an AI system?",
+        "tags": [
+          "simple",
+          "rights"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_170",
+          "ai_act_2024_1689:rct_47",
+          "ai_act_2024_1689:rct_44",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:rct_162"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_85"
+        ]
+      },
+      {
+        "id": "q16",
+        "question": "What is a regulatory sandbox and who can use it?",
+        "tags": [
+          "compound",
+          "innovation"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_138",
+          "ai_act_2024_1689:rct_139",
+          "ai_act_2024_1689:rct_140",
+          "ai_omnibus_2026_1744:rct_25",
+          "ai_omnibus_2026_1744:rct_24"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q17",
+        "question": "What must providers do after a high-risk system is on the market?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:rct_86",
+          "ai_act_2024_1689:art_20"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_72"
+        ]
+      },
+      {
+        "id": "q18",
+        "question": "Who is responsible when a company puts its own name on someone else's AI system?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_25",
+          "ai_act_2024_1689:rct_84",
+          "ai_act_2024_1689:rct_79",
+          "ai_act_2024_1689:art_3_p1",
+          "ai_act_2024_1689:anx_VIII_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_25"
+        ]
+      },
+      {
+        "id": "q19",
+        "question": "From what date do obligations for high-risk AI systems apply?",
+        "tags": [
+          "amendment",
+          "dates",
+          "hard"
+        ],
+        "hit": true,
+        "recall": 0.6666666666666666,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_omnibus_2026_1744:rct_39",
+          "ai_omnibus_2026_1744:rct_9",
+          "ai_act_2024_1689:rct_177"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:art_113"
+        ]
+      },
+      {
+        "id": "q20",
+        "question": "Did the 2026 Digital Omnibus change the dates in the AI Act?",
+        "tags": [
+          "amendment",
+          "dates"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_act_2024_1689:rct_179",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_omnibus_2026_1744:rct_1",
+          "ai_omnibus_2026_1744:rct_38"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:art_1_p18"
+        ]
+      },
+      {
+        "id": "q21",
+        "question": "Why were the high-risk deadlines postponed?",
+        "tags": [
+          "amendment",
+          "reasoning"
+        ],
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:rct_2",
+          "ai_omnibus_2026_1744:art_1_p18",
+          "ai_act_2024_1689:art_24",
+          "ai_omnibus_2026_1744:rct_37"
+        ],
+        "gold": [
+          "ai_omnibus_2026_1744:rct_40",
+          "ai_omnibus_2026_1744:rct_39"
+        ]
+      },
+      {
+        "id": "q24",
+        "question": "Does the AI Act ban facial recognition in shops?",
+        "tags": [
+          "scenario",
+          "hard",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_43",
+          "ai_act_2024_1689:rct_18",
+          "ai_act_2024_1689:art_50_p1",
+          "ai_act_2024_1689:art_5_p1",
+          "ai_act_2024_1689:rct_39"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_5_p1"
+        ]
+      },
+      {
+        "id": "q25",
+        "question": "What technical documentation must a provider of a high-risk system keep?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:art_18",
+          "ai_act_2024_1689:art_11",
+          "ai_act_2024_1689:rct_71",
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_16"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_11"
+        ]
+      },
+      {
+        "id": "q26",
+        "question": "Do high-risk AI systems have to keep logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_12",
+          "ai_act_2024_1689:rct_71",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_16"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_12"
+        ]
+      },
+      {
+        "id": "q27",
+        "question": "How long must providers keep the automatically generated logs?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_19",
+          "ai_act_2024_1689:art_21",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_12",
+          "ai_act_2024_1689:art_16"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_19"
+        ]
+      },
+      {
+        "id": "q28",
+        "question": "What information must be given to deployers of a high-risk system?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_13",
+          "ai_act_2024_1689:rct_72",
+          "ai_act_2024_1689:rct_66",
+          "ai_act_2024_1689:art_26_p2",
+          "ai_act_2024_1689:rct_96"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_13"
+        ]
+      },
+      {
+        "id": "q29",
+        "question": "What does the AI Act say about cybersecurity of high-risk systems?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_122",
+          "ai_act_2024_1689:art_15",
+          "ai_act_2024_1689:rct_76",
+          "ai_act_2024_1689:rct_77",
+          "ai_act_2024_1689:art_42"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_15"
+        ]
+      },
+      {
+        "id": "q30",
+        "question": "What is a quality management system and who needs one?",
+        "tags": [
+          "compound",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_146",
+          "ai_act_2024_1689:art_17",
+          "ai_act_2024_1689:rct_81",
+          "ai_omnibus_2026_1744:rct_28",
+          "ai_act_2024_1689:anx_VII_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_17"
+        ]
+      },
+      {
+        "id": "q31",
+        "question": "What are the obligations of deployers rather than providers?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:rct_120",
+          "ai_act_2024_1689:art_50_p1",
+          "ai_act_2024_1689:rct_136",
+          "ai_act_2024_1689:rct_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_26_p1"
+        ]
+      },
+      {
+        "id": "q32",
+        "question": "When is a fundamental rights impact assessment required?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_96",
+          "ai_act_2024_1689:art_27",
+          "ai_act_2024_1689:rct_59",
+          "ai_act_2024_1689:rct_48",
+          "ai_act_2024_1689:art_7"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_27"
+        ]
+      },
+      {
+        "id": "q33",
+        "question": "What are the obligations of importers of high-risk AI systems?",
+        "tags": [
+          "simple",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_23",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_16",
+          "ai_act_2024_1689:art_25",
+          "ai_act_2024_1689:art_24"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_23"
+        ]
+      },
+      {
+        "id": "q34",
+        "question": "Does a provider outside the EU need a representative in the EU?",
+        "tags": [
+          "scenario",
+          "roles"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_22",
+          "ai_act_2024_1689:art_49",
+          "ai_omnibus_2026_1744:art_1_p11",
+          "ai_act_2024_1689:art_54",
+          "ai_act_2024_1689:art_83"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_22"
+        ]
+      },
+      {
+        "id": "q35",
+        "question": "What is the CE marking and when must it be affixed?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_48",
+          "ai_act_2024_1689:rct_129",
+          "ai_act_2024_1689:art_83",
+          "ai_act_2024_1689:art_24",
+          "ai_act_2024_1689:art_23"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_48"
+        ]
+      },
+      {
+        "id": "q36",
+        "question": "What is an EU declaration of conformity?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_47",
+          "ai_act_2024_1689:anx_V",
+          "ai_act_2024_1689:rct_173",
+          "ai_act_2024_1689:art_32",
+          "ai_act_2024_1689:art_83"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_47"
+        ]
+      },
+      {
+        "id": "q37",
+        "question": "What role do harmonised standards play?",
+        "tags": [
+          "simple",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.3333333333333333,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:rct_117",
+          "ai_act_2024_1689:art_40",
+          "ai_omnibus_2026_1744:rct_21",
+          "ai_act_2024_1689:art_41"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_40"
+        ]
+      },
+      {
+        "id": "q38",
+        "question": "What happens if there are no harmonised standards?",
+        "tags": [
+          "compound",
+          "conformity"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_121",
+          "ai_act_2024_1689:art_41",
+          "ai_act_2024_1689:art_40",
+          "ai_act_2024_1689:rct_117",
+          "ai_omnibus_2026_1744:art_1_p7"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_41"
+        ]
+      },
+      {
+        "id": "q39",
+        "question": "Must high-risk AI systems be registered in a database?",
+        "tags": [
+          "compound",
+          "registration"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:rct_131",
+          "ai_omnibus_2026_1744:rct_22",
+          "ai_act_2024_1689:art_49"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_71",
+          "ai_act_2024_1689:art_49"
+        ]
+      },
+      {
+        "id": "q40",
+        "question": "What must be reported when an AI system causes a serious incident?",
+        "tags": [
+          "simple",
+          "incidents"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_73_p1",
+          "ai_act_2024_1689:rct_115",
+          "ai_act_2024_1689:rct_155",
+          "ai_act_2024_1689:art_26_p1",
+          "ai_act_2024_1689:art_73_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_73_p1"
+        ]
+      },
+      {
+        "id": "q41",
+        "question": "Who supervises AI systems once they are on the market?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_161",
+          "ai_act_2024_1689:art_75",
+          "ai_omnibus_2026_1744:rct_31",
+          "ai_act_2024_1689:rct_162",
+          "ai_act_2024_1689:rct_82"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_74_p1"
+        ]
+      },
+      {
+        "id": "q42",
+        "question": "What is the AI Board and what does it do?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_66_p2",
+          "ai_act_2024_1689:rct_4",
+          "ai_act_2024_1689:rct_53_p2",
+          "ai_act_2024_1689:rct_53_p1",
+          "ai_act_2024_1689:rct_12"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_66_p1"
+        ]
+      },
+      {
+        "id": "q43",
+        "question": "Are participants in real-world testing entitled to be told what is happening?",
+        "tags": [
+          "scenario",
+          "innovation"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_61",
+          "ai_act_2024_1689:rct_141",
+          "ai_act_2024_1689:art_60_p2",
+          "ai_act_2024_1689:art_3_p4",
+          "ai_act_2024_1689:art_76"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_61"
+        ]
+      },
+      {
+        "id": "q44",
+        "question": "What confidentiality protections apply to information shared with authorities?",
+        "tags": [
+          "simple",
+          "governance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_78",
+          "ai_act_2024_1689:rct_167",
+          "ai_act_2024_1689:rct_154",
+          "ai_omnibus_2026_1744:art_1_p16",
+          "ai_act_2024_1689:art_77"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_78"
+        ]
+      },
+      {
+        "id": "q45",
+        "question": "Is there anything in the AI Act for systems that are not high-risk?",
+        "tags": [
+          "scenario",
+          "voluntary"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_166",
+          "ai_act_2024_1689:rct_51",
+          "ai_act_2024_1689:rct_52",
+          "ai_act_2024_1689:rct_85",
+          "ai_act_2024_1689:art_6_p2"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_95"
+        ]
+      },
+      {
+        "id": "q46",
+        "question": "What fines can be imposed on EU institutions themselves?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_100",
+          "ai_act_2024_1689:art_101",
+          "ai_act_2024_1689:rct_168",
+          "ai_act_2024_1689:rct_169",
+          "ai_omnibus_2026_1744:art_1_p15"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_100"
+        ]
+      },
+      {
+        "id": "q47",
+        "question": "What fines apply to providers of general-purpose AI models?",
+        "tags": [
+          "simple",
+          "penalties"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_101",
+          "ai_act_2024_1689:rct_169",
+          "ai_act_2024_1689:rct_179",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:rct_109"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_101"
+        ]
+      },
+      {
+        "id": "q48",
+        "question": "What goes in the technical documentation for a general-purpose AI model?",
+        "tags": [
+          "compound",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "retrieved": [
+          "ai_act_2024_1689:rct_101",
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:anx_XII",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:art_91"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_XI",
+          "ai_act_2024_1689:art_53"
+        ]
+      },
+      {
+        "id": "q49",
+        "question": "Which products are covered by Annex I harmonisation legislation?",
+        "tags": [
+          "simple",
+          "high-risk"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_omnibus_2026_1744:rct_20",
+          "ai_act_2024_1689:rct_50",
+          "ai_omnibus_2026_1744:art_1_p7",
+          "ai_omnibus_2026_1744:rct_26",
+          "ai_omnibus_2026_1744:art_1_p9"
+        ],
+        "gold": [
+          "ai_act_2024_1689:anx_I_p1"
+        ]
+      },
+      {
+        "id": "q50",
+        "question": "Can a small company test an AI system before full compliance?",
+        "tags": [
+          "compound",
+          "innovation",
+          "scenario"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_17",
+          "ai_act_2024_1689:art_11",
+          "ai_act_2024_1689:rct_139",
+          "ai_omnibus_2026_1744:art_1_p9",
+          "ai_act_2024_1689:art_23"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_57_p1",
+          "ai_act_2024_1689:art_62"
+        ]
+      },
+      {
+        "id": "q51",
+        "question": "What does the Act say about deepfakes?",
+        "tags": [
+          "scenario",
+          "transparency"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:rct_134",
+          "ai_act_2024_1689:art_3_p4",
+          "ai_omnibus_2026_1744:art_1_p11",
+          "ai_act_2024_1689:art_74_p1",
+          "ai_act_2024_1689:art_56_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_50_p2"
+        ]
+      },
+      {
+        "id": "q52",
+        "question": "Does the AI Act apply to free and open-source AI?",
+        "tags": [
+          "scenario",
+          "scope",
+          "nuance"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_103",
+          "ai_act_2024_1689:rct_89",
+          "ai_act_2024_1689:rct_104",
+          "ai_act_2024_1689:art_2_p2",
+          "ai_act_2024_1689:rct_102"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_2_p2"
+        ]
+      },
+      {
+        "id": "q53",
+        "question": "Who writes the codes of practice for general-purpose AI?",
+        "tags": [
+          "simple",
+          "gpai"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "retrieved": [
+          "ai_act_2024_1689:rct_116",
+          "ai_act_2024_1689:rct_117",
+          "ai_act_2024_1689:art_53",
+          "ai_act_2024_1689:art_56_p1",
+          "ai_act_2024_1689:art_55"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_56_p1"
+        ]
+      },
+      {
+        "id": "q55",
+        "question": "What is the penalty for supplying incorrect information to notified bodies?",
+        "tags": [
+          "compound",
+          "penalties"
+        ],
+        "hit": false,
+        "recall": 0.0,
+        "rr": 0.0,
+        "retrieved": [
+          "ai_act_2024_1689:art_99_p1",
+          "ai_act_2024_1689:art_37",
+          "ai_act_2024_1689:art_31_p1",
+          "ai_act_2024_1689:art_45",
+          "ai_act_2024_1689:art_36_p1"
+        ],
+        "gold": [
+          "ai_act_2024_1689:art_99_p2"
+        ]
+      },
+      {
+        "id": "q22",
+        "question": "What is the capital of France?",
+        "tags": [
+          "unanswerable",
+          "off-topic"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -10.392572402954102,
+        "gold": []
+      },
+      {
+        "id": "q23",
+        "question": "How much does it cost to certify an AI system in Germany?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.890353679656982,
+        "gold": []
+      },
+      {
+        "id": "q54",
+        "question": "How many employees does a company need before the AI Act applies?",
+        "tags": [
+          "unanswerable",
+          "plausible"
+        ],
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "best_score": -4.476099967956543,
+        "gold": []
+      }
+    ]
+  }
+]
