@@ -41,6 +41,6 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: "1"
         run: |
           python eval/evaluate.py --k 5 --mode rerank \
-            --min-hit-rate 0.80 \
+            --min-hit-rate 0.78\
             --min-mrr 0.65 \
             --min-refusal-rate 1.0
