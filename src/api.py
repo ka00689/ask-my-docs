@@ -105,10 +105,28 @@ class Question(BaseModel):
     question: str = Field(min_length=3, max_length=500)
 
 
+def ensure_index():
+    """Build the search index if this machine does not have one yet.
+
+    data/index is not committed (it is rebuilt output, not source), so a freshly
+    deployed copy has the chunks but no index. Building it takes a couple of
+    minutes on first start and is then cached for as long as the host keeps the
+    disk, which is why the health check reports readiness separately.
+    """
+    index_dir = PROJECT / "data" / "index" / "chroma"
+    if index_dir.exists() and any(index_dir.iterdir()):
+        return
+    print("No search index found; building it from the chunks. This takes a few minutes...")
+    import subprocess
+    subprocess.run([sys.executable, str(PROJECT / "src" / "build_index.py")], check=True)
+    print("Index built.")
+
+
 @app.on_event("startup")
 def load_everything():
     global retriever, models
 
+    ensure_index()
     print("Loading retriever (this takes a few seconds)...")
     retriever = Retriever()
     models = ModelChain()

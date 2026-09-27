@@ -17,6 +17,7 @@ rank-bm25
 beautifulsoup4
 pypdf
 
-# Web backend
+# Web interfaces
 fastapi
 uvicorn
+streamlit
