@@ -68,7 +68,10 @@ def load_system():
         with st.spinner("First run: building the search index. This takes a few minutes."):
             subprocess.run([sys.executable, str(PROJECT / "src" / "build_index.py")],
                            check=True)
-    return Retriever(), ModelChain()
+    retriever = Retriever()
+    models = ModelChain()
+    print(f"Answering with: {', '.join(str(p) for p in models.providers)}")
+    return retriever, models
 
 
 @st.cache_data(show_spinner=False, max_entries=500)

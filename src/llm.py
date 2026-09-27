@@ -61,6 +61,7 @@ class Provider:
 
 def google_provider():
     if not os.environ.get("GOOGLE_API_KEY"):
+        print("  google: skipped, GOOGLE_API_KEY is not set")
         return None
     from langchain_google_genai import ChatGoogleGenerativeAI
 
@@ -74,6 +75,7 @@ def google_provider():
 
 def groq_provider():
     if not os.environ.get("GROQ_API_KEY"):
+        print("  groq: skipped, GROQ_API_KEY is not set")
         return None
     from langchain_groq import ChatGroq
 
@@ -120,7 +122,7 @@ class ModelChain:
             try:
                 provider = (builder(ollama_model) if name == "ollama" else builder())
             except Exception as error:      # a missing library should not be fatal
-                print(f"  (provider {name} unavailable: {error})")
+                print(f"  {name}: unavailable - {type(error).__name__}: {error}")
                 continue
             if provider:
                 self.providers.append(provider)
@@ -142,6 +144,9 @@ class ModelChain:
             try:
                 return provider.complete(system, user, schema), provider.name
             except Exception as error:
+                # The full message matters while setting up: a rejected key and
+                # an unreachable service look identical without it.
+                print(f"  {provider.name} failed: {type(error).__name__}: {error}")
                 errors.append(f"{provider.name}: {type(error).__name__}")
                 continue
         raise RuntimeError("Every model provider failed - " + "; ".join(errors))
