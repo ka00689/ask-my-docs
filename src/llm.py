@@ -21,7 +21,7 @@ PROJECT = Path(__file__).resolve().parent.parent
 
 # Model names change; override them with environment variables rather than
 # editing code when a provider retires one.
-GOOGLE_MODEL = os.environ.get("GOOGLE_MODEL", "gemini-2.5-flash")
+GOOGLE_MODEL = os.environ.get("GOOGLE_MODEL", "gemini-3.8-flash")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:7b")
 
@@ -42,6 +42,26 @@ def load_env_file():
 
 
 load_env_file()
+
+
+def as_text(content):
+    """Flatten a reply into plain text.
+
+    Providers differ: some return a string, and newer models return a list of
+    content blocks (dicts with a "text" field, or plain strings). The rest of
+    the code only wants the text, so the difference is absorbed here.
+    """
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = []
+        for block in content:
+            if isinstance(block, str):
+                parts.append(block)
+            elif isinstance(block, dict):
+                parts.append(block.get("text") or block.get("content") or "")
+        return "".join(parts)
+    return str(content)
 
 
 class Provider:
@@ -68,7 +88,7 @@ def google_provider():
     client = ChatGoogleGenerativeAI(model=GOOGLE_MODEL, temperature=0)
 
     def invoke(system, user, schema=None):
-        return client.invoke([("system", system), ("human", user)]).content
+        return as_text(client.invoke([("system", system), ("human", user)]).content)
 
     return Provider("google", GOOGLE_MODEL, invoke)
 
@@ -82,7 +102,7 @@ def groq_provider():
     client = ChatGroq(model=GROQ_MODEL, temperature=0)
 
     def invoke(system, user, schema=None):
-        return client.invoke([("system", system), ("human", user)]).content
+        return as_text(client.invoke([("system", system), ("human", user)]).content)
 
     return Provider("groq", GROQ_MODEL, invoke)
 
@@ -98,10 +118,10 @@ def ollama_provider(model=None):
         try:
             client = ChatOllama(model=name, temperature=0,
                                 format=schema if schema else "json")
-            return client.invoke([("system", system), ("human", user)]).content
+            return as_text(client.invoke([("system", system), ("human", user)]).content)
         except Exception:
             client = ChatOllama(model=name, temperature=0, format="json")
-            return client.invoke([("system", system), ("human", user)]).content
+            return as_text(client.invoke([("system", system), ("human", user)]).content)
 
     return Provider("ollama", name, invoke)
 
