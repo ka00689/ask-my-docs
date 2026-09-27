@@ -25,11 +25,10 @@ os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")
 os.environ.setdefault("HF_HUB_DISABLE_TELEMETRY", "1")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from llm import ModelChain
 from retrieval import RERANK_MIN_SCORE, Retriever
 
-from langchain_ollama import ChatOllama
-
-MODEL = "llama3.2"
+MODEL = "qwen2.5:7b"   # llama3.2 could not follow the citation rules reliably
 # How many passages the model is shown. Tried 8; measured worse, because the
 # extra low-scoring passages gave the model more ways to go wrong. Kept at 5.
 PASSAGES_SHOWN = 5
@@ -203,7 +202,7 @@ def validate(reply, passages):
     return problems
 
 
-def ask_model(llm, question, passages, complaint=None):
+def ask_model(models, question, passages, complaint=None):
     prompt = build_prompt(question, passages)
     if complaint:
         prompt += ("\n\nYour previous reply was rejected for these reasons:\n"
@@ -211,8 +210,8 @@ def ask_model(llm, question, passages, complaint=None):
                    "Write it again. Copy every date, figure and regulation number "
                    "exactly as it appears in the passage you cite, and if a fact "
                    "is not in the passages, leave it out.")
-    reply = llm.invoke([("system", SYSTEM_PROMPT), ("human", prompt)])
-    return reply.content
+    text, _provider = models.complete(SYSTEM_PROMPT, prompt, ANSWER_SCHEMA)
+    return text
 
 
 def print_answer(reply, passages):
@@ -264,17 +263,13 @@ def main():
         for i, entry in enumerate(passages, start=1):
             print(f"[S{i}] {entry['chunk']['label']}  (score {entry['rerank_score']:.2f})")
 
-    # Prefer schema-constrained output; fall back to plain JSON mode on older setups.
-    try:
-        llm = ChatOllama(model=args.model, temperature=0, format=ANSWER_SCHEMA)
-        llm.invoke([("human", "Reply with {\"answerable\": false, \"claims\": []}")])
-    except Exception:
-        print("(schema mode unavailable, falling back to plain JSON mode)")
-        llm = ChatOllama(model=args.model, temperature=0, format="json")
+    models = ModelChain(ollama_model=args.model)
+    if args.debug:
+        print(f"(model providers in order: {', '.join(str(p) for p in models.providers)})")
 
     complaint = None
     for attempt in range(1, MAX_ATTEMPTS + 1):
-        raw = ask_model(llm, args.question, passages, complaint)
+        raw = ask_model(models, args.question, passages, complaint)
         if args.debug:
             print(f"\n--- raw reply, attempt {attempt} ---\n{raw}\n--- end ---")
         try:

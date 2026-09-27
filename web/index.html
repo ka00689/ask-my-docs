@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What does the AI Act say?</title>
+<style>
+  :root {
+    --ink: #10203c;
+    --ink-soft: #4a5a75;
+    --paper: #f7f8fb;
+    --rule: #d4dae6;
+    --union: #17398d;      /* the blue of EU legal publishing */
+    --mark: #b07d12;       /* citation markers, a muted gold */
+    --flag: #8a5a00;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0 1.25rem 5rem;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .wrap { max-width: 44rem; margin: 0 auto; }
+
+  header { padding: 3.5rem 0 2rem; }
+
+  h1 {
+    margin: 0 0 .4rem;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    letter-spacing: -.02em;
+    font-weight: 600;
+  }
+
+  .standfirst { margin: 0; color: var(--ink-soft); max-width: 34rem; }
+
+  .corpus {
+    margin: 1.2rem 0 0;
+    padding-left: .9rem;
+    border-left: 3px solid var(--union);
+    font-size: .92rem;
+    color: var(--ink-soft);
+  }
+  .corpus strong { color: var(--ink); font-weight: 600; }
+
+  form { margin: 2.25rem 0 0; }
+
+  label { display: block; font-weight: 600; margin-bottom: .5rem; }
+
+  .field { display: flex; gap: .6rem; align-items: stretch; }
+
+  textarea {
+    flex: 1;
+    min-height: 3.2rem;
+    padding: .8rem .9rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--white);
+    font: inherit;
+    resize: vertical;
+  }
+  textarea:focus-visible, button:focus-visible, .example:focus-visible {
+    outline: 2px solid var(--union);
+    outline-offset: 2px;
+  }
+
+  button {
+    padding: .8rem 1.3rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--union);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #12306f; }
+  button[disabled] { background: var(--ink-soft); cursor: progress; }
+
+  .examples { margin: 1rem 0 0; font-size: .93rem; color: var(--ink-soft); }
+  .examples ul { margin: .4rem 0 0; padding: 0; list-style: none; }
+  .examples li { margin: .3rem 0; }
+  .example {
+    border: 0; background: none; padding: 0;
+    color: var(--union); font: inherit; text-align: left;
+    text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+  }
+
+  /* One quiet moment of motion: a rule that travels while the model works. */
+  .working { margin: 2.5rem 0 0; color: var(--ink-soft); }
+  .working p { margin: 0 0 .7rem; }
+  .bar { height: 2px; background: var(--rule); overflow: hidden; }
+  .bar span {
+    display: block; width: 35%; height: 100%; background: var(--union);
+    animation: travel 1.6s ease-in-out infinite;
+  }
+  @keyframes travel {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(340%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bar span { animation: none; width: 100%; opacity: .4; }
+  }
+
+  .answer { margin: 2.5rem 0 0; }
+
+  .panel {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--union);
+    border-radius: 4px;
+    padding: 1.4rem 1.5rem 1.5rem;
+  }
+
+  .panel-label {
+    margin: 0 0 1rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--union);
+  }
+
+  .claim:last-of-type { margin-bottom: 0; }
+
+  .claim {
+    margin: 0 0 1rem;
+    font-family: Iowan Old Style, Charter, Georgia, "Times New Roman", serif;
+    font-size: 1.12rem;
+    line-height: 1.6;
+  }
+
+  .marker {
+    display: inline-block;
+    margin-left: .15rem;
+    color: var(--mark);
+    font-family: inherit;
+    font-size: .8em;
+    font-weight: 700;
+    text-decoration: none;
+    vertical-align: super;
+  }
+  .marker:hover { text-decoration: underline; }
+
+  .sources { margin: 2rem 0 0; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+  .sources h2 { margin: 0 0 .9rem; font-size: .95rem; font-weight: 600; }
+  .source { margin: 0 0 1.1rem; padding-left: 2.1rem; position: relative; font-size: .94rem; }
+  .source .num {
+    position: absolute; left: 0; top: .05rem;
+    color: var(--mark); font-weight: 700; font-size: .85rem;
+  }
+  .source a { color: var(--union); }
+  .source .meta { color: var(--ink-soft); }
+  .source .excerpt {
+    margin: .35rem 0 0; color: var(--ink-soft); font-size: .88rem;
+    border-left: 2px solid var(--rule); padding-left: .7rem;
+  }
+
+  .refusal {
+    margin: 2.5rem 0 0; padding: 1rem 1.1rem;
+    background: var(--white); border-left: 3px solid var(--flag); border-radius: 0 4px 4px 0;
+  }
+  .refusal h2 { margin: 0 0 .4rem; font-size: 1rem; }
+  .refusal p { margin: 0; color: var(--ink-soft); }
+
+  .timing { margin: 1.2rem 0 0; font-size: .82rem; color: var(--ink-soft); }
+
+  footer {
+    margin: 4rem 0 0; padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    font-size: .85rem; color: var(--ink-soft);
+  }
+  footer p { margin: 0 0 .5rem; }
+  footer a { color: var(--union); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>What does the AI Act say?</h1>
+    <p class="standfirst">Ask a question about the EU's AI rules and get an answer built only from
+      the legal text, with a link to the exact article it came from.</p>
+    <p class="corpus">
+      It reads two documents: <strong>Regulation (EU) 2024/1689</strong>, the AI Act, and
+      <strong>Regulation (EU) 2026/1744</strong>, the 2026 amendment that pushed back several
+      deadlines. Ask about anything else and it will tell you it doesn't know, rather than
+      making something up.
+    </p>
+  </header>
+
+  <form id="ask">
+    <label for="question">Your question</label>
+    <div class="field">
+      <textarea id="question" rows="2" maxlength="500"
+        placeholder="What are the penalties for prohibited AI practices?"></textarea>
+      <button type="submit" id="submit">Ask</button>
+    </div>
+    <div class="examples">
+      Questions that work well:
+      <ul>
+        <li><button type="button" class="example">Does the AI Act apply to open-source AI?</button></li>
+        <li><button type="button" class="example">What does the AI Act say about deep fake content?</button></li>
+        <li><button type="button" class="example">Can I be fined for how my AI system was trained?</button></li>
+        <li><button type="button" class="example">Which AI practices are prohibited?</button></li>
+        <li><button type="button" class="example">What is the AI literacy obligation?</button></li>
+        <li><button type="button" class="example">Is 2 August 2026 still the date when high-risk rules start?</button></li>
+      </ul>
+    </div>
+  </form>
+
+  <div id="output" aria-live="polite"></div>
+
+  <footer>
+    <p>Retrieval combines keyword and meaning-based search, a cross-encoder reranks the
+      candidates, and a language model writes the answer. Every citation is checked in
+      code before the answer is shown: claims citing a passage that was not provided,
+      or stating a date absent from it, are rejected and rewritten.</p>
+    <p>Not legal advice. Consolidated EU law is published on
+      <a href="https://eur-lex.europa.eu">EUR-Lex</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+const form = document.getElementById("ask");
+const box = document.getElementById("question");
+const button = document.getElementById("submit");
+const output = document.getElementById("output");
+
+document.querySelectorAll(".example").forEach(item => {
+  item.addEventListener("click", () => {
+    box.value = item.textContent.trim();
+    form.requestSubmit();
+  });
+});
+
+const stages = [
+  "Searching 413 passages of the regulation",
+  "Reranking the closest matches",
+  "Reading the passages and drafting an answer",
+  "Checking every citation against its passage"
+];
+
+function showWorking() {
+  output.innerHTML =
+    '<div class="working"><p id="stage">' + stages[0] +
+    '</p><div class="bar"><span></span></div></div>';
+  let i = 0;
+  return setInterval(() => {
+    i = Math.min(i + 1, stages.length - 1);
+    const stage = document.getElementById("stage");
+    if (stage) stage.textContent = stages[i];
+  }, 6000);
+}
+
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function render(data) {
+  if (!data.answerable) {
+    output.innerHTML =
+      '<div class="refusal"><h2>No answer given</h2><p>' +
+      escapeHtml(data.reason || "The regulation does not cover this question.") +
+      '</p></div>' + timing(data);
+    return;
+  }
+
+  const claims = data.claims.map(claim => {
+    const markers = claim.citations.map(c =>
+      '<a class="marker" href="#source-' + escapeHtml(String(c)) + '">' +
+      escapeHtml(String(c)) + '</a>').join("");
+    return '<p class="claim">' + escapeHtml(claim.text) + markers + '</p>';
+  }).join("");
+
+  const sources = data.sources.map(source =>
+    '<div class="source" id="source-' + escapeHtml(source.marker) + '">' +
+      '<span class="num">' + escapeHtml(source.marker) + '</span>' +
+      '<a href="' + escapeHtml(source.url) + '" target="_blank" rel="noopener">' +
+        escapeHtml(source.label) + '</a>' +
+      '<div class="meta">' + escapeHtml(source.document) +
+        ' &middot; version of ' + escapeHtml(source.date) + '</div>' +
+      '<p class="excerpt">' + escapeHtml(source.excerpt) + '…</p>' +
+    '</div>').join("");
+
+  output.innerHTML =
+    '<div class="answer">' +
+      '<div class="panel"><p class="panel-label">Answer</p>' + claims + '</div>' +
+      '<div class="sources"><h2>Sources</h2>' + sources + '</div>' +
+    '</div>' + timing(data);
+}
+
+function timing(data) {
+  const parts = [];
+  if (data.seconds) parts.push(data.seconds + "s");
+  if (data.attempts > 1) parts.push(data.attempts + " drafts needed to pass the citation checks");
+  if (data.cached) parts.push("answered from cache");
+  return parts.length ? '<p class="timing">' + parts.join(" &middot; ") + '</p>' : "";
+}
+
+form.addEventListener("submit", async event => {
+  event.preventDefault();
+  const question = box.value.trim();
+  if (question.length < 3) return;
+
+  button.disabled = true;
+  const ticker = showWorking();
+
+  try {
+    const response = await fetch("/ask", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({question})
+    });
+    if (!response.ok) throw new Error("The server replied with " + response.status);
+    render(await response.json());
+  } catch (error) {
+    output.innerHTML =
+      '<div class="refusal"><h2>The question could not be sent</h2><p>' +
+      escapeHtml(error.message) + '. Check the server is still running, then try again.</p></div>';
+  } finally {
+    clearInterval(ticker);
+    button.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

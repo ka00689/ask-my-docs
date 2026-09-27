@@ -25,8 +25,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from answer import (ANSWER_SCHEMA, MAX_ATTEMPTS, MODEL, PASSAGES_SHOWN,
+from answer import (ANSWER_SCHEMA, MAX_ATTEMPTS, PASSAGES_SHOWN,
                     ask_model, parse_reply, validate)
+from llm import ModelChain
 from retrieval import RERANK_MIN_SCORE, Retriever
 
 PROJECT = Path(__file__).resolve().parent.parent
@@ -37,7 +38,7 @@ app = FastAPI(title="Ask My Docs", description="Question answering over the EU A
 # Loaded once when the server starts, not per request: loading the models takes
 # a few seconds and they can be reused for every question.
 retriever = None
-llm = None
+models = None
 # Repeated questions are answered from memory. On a public demo most people ask
 # the same few things, so this saves both time and, later, money.
 cache = {}
@@ -50,21 +51,20 @@ class Question(BaseModel):
 
 @app.on_event("startup")
 def load_everything():
-    global retriever, llm
-    from langchain_ollama import ChatOllama
+    global retriever, models
 
     print("Loading retriever (this takes a few seconds)...")
     retriever = Retriever()
-    try:
-        llm = ChatOllama(model=MODEL, temperature=0, format=ANSWER_SCHEMA)
-    except Exception:
-        llm = ChatOllama(model=MODEL, temperature=0, format="json")
+    models = ModelChain()
+    print(f"Answering with: {', '.join(str(p) for p in models.providers)}")
     print(f"Ready: {len(retriever.chunks)} chunks indexed.")
 
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "chunks": len(retriever.chunks) if retriever else 0}
+    return {"status": "ok",
+            "chunks": len(retriever.chunks) if retriever else 0,
+            "model": models.primary.model if models else None}
 
 
 @app.get("/")
@@ -112,7 +112,7 @@ def ask(payload: Question):
 
     complaint, problems = None, []
     for attempt in range(1, MAX_ATTEMPTS + 1):
-        raw = ask_model(llm, question, passages, complaint)
+        raw = ask_model(models, question, passages, complaint)
         try:
             reply = parse_reply(raw)
         except json.JSONDecodeError:

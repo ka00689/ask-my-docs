@@ -4,6 +4,10 @@ langchain-community
 langchain-chroma
 langchain-ollama
 
+# Hosted model providers, used when the app is deployed
+langchain-google-genai
+langchain-groq
+
 # Retrieval: vector database, embeddings + reranker, keyword search
 chromadb
 sentence-transformers
